@@ -1,0 +1,10 @@
+button:hover div {
+  /*background: lightgray;*/
+  opacity: 89%;
+}
+
+button {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-focus-ring-color: transparent;
+  outline: none;
+}

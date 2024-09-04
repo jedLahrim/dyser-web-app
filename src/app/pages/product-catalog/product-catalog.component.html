@@ -1,0 +1,545 @@
+<div
+  style="width: 1440px; height: 1014px; position: relative; background: white; border-radius: 16px; overflow: hidden">
+  <app-side-bar [dynamicHeight]=1020></app-side-bar>
+  <app-header></app-header>
+  <div
+    style="left: 280px; top: 102px; position: absolute; justify-content: flex-start; align-items: center; gap: 20px; display: inline-flex">
+    <div style="height: 34px; justify-content: flex-start; align-items: flex-start; gap: 6px; display: flex">
+      <div
+        style="width: 414px; color: #0F0F10; font-size: 24px; font-family: Inter; font-weight: 600; line-height: 34px; word-wrap: break-word">
+        Product catalog
+      </div>
+    </div>
+    <button
+      style="cursor: pointer;margin-left: 575px;padding: 8px; background: linear-gradient(0deg, #0F0F10 0%, #0F0F10 100%), linear-gradient(180deg, rgba(255, 255, 255, 0.18) 0%, rgba(255, 255, 255, 0) 100%); box-shadow: 0px 0px 0px 1px #242628; border-radius: 8px; overflow: hidden; border: 1px rgba(255, 255, 255, 0.12) solid; justify-content: center; align-items: center; gap: 4px; display: flex">
+
+      <div style="width: 20px; height: 20px; position: relative">
+        <div
+          style="width: 10px; height: 0px; left: 5px; top: 10px; position: absolute; border: 1.50px white solid"></div>
+        <div
+          style="width: 0px; height: 10px; left: 10px; top: 5px; position: absolute; border: 1.50px white solid"></div>
+      </div>
+      <div
+        style="padding-left: 4px; padding-right: 4px; justify-content: center; align-items: center; gap: 8px; display: flex">
+        <div
+          style="text-align: center; color: white; font-size: 14px; font-family: Inter; font-weight: 500; line-height: 20px; word-wrap: break-word">
+          Add product
+        </div>
+      </div>
+    </button>
+  </div>
+  <div
+    style="padding: 16px; left: 280px; top: 342px; position: absolute; background: white; border-radius: 10px; overflow: hidden; border: 1px #EAEDF2 solid; justify-content: center; align-items: center; display: inline-flex">
+    <div
+      style="align-self: stretch; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 24px; display: inline-flex">
+      <div style="align-self: stretch; justify-content: space-between; align-items: flex-start; display: inline-flex">
+        <div class="tab-container">
+          <div class="tabs">
+            <div (click)="selectTab(tab.label)"
+                 *ngFor="let tab of tabs"
+                 [ngClass]="{'selected': selectedTab === tab.label, 'unselected': selectedTab !== tab.label}">
+              <div [style]="{'white-space': 'nowrap','margin-left':tab.label=='Pricing'? '-14px':''}">{{ tab.label }}
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div
+          style="width: 1000px;margin-left: 145px;justify-content: flex-start; align-items: flex-start; gap: 8px; display: flex">
+          <button style="background: none; border: none; cursor: pointer; padding: 0;">
+            <div
+              style="height: 20px; padding: 8px; background: white; border-radius: 8px; overflow: hidden; border: 1px #EAEDF2 solid; justify-content: center; align-items: center; gap: 4px; display: flex">
+              <div
+                style="padding-left: 4px; padding-right: 4px; justify-content: center; align-items: center; gap: 8px; display: flex">
+                <div
+                  style="text-align: center; color: #555F75; font-size: 14px; font-family: Inter; font-weight: 500; line-height: 20px; word-wrap: break-word">
+                  Created
+                </div>
+              </div>
+              <app-down-arrow-icon></app-down-arrow-icon>
+            </div>
+          </button>
+
+          <button style="background: none; border: none; cursor: pointer; padding: 0;">
+            <div
+              style="height: 20px; padding: 8px; background: white; border-radius: 8px; overflow: hidden; border: 1px #EAEDF2 solid; justify-content: center; align-items: center; gap: 4px; display: flex">
+              <div
+                style="padding-left: 4px; padding-right: 4px; justify-content: center; align-items: center; gap: 8px; display: flex">
+                <div
+                  style="text-align: center; color: #555F75; font-size: 14px; font-family: Inter; font-weight: 500; line-height: 20px; word-wrap: break-word">
+                  Status
+                </div>
+              </div>
+              <app-down-arrow-icon></app-down-arrow-icon>
+            </div>
+          </button>
+
+          <button style="background: none; border: none; cursor: pointer; padding: 0;">
+            <div
+              style="height: 20px; padding: 8px; background: white; border-radius: 8px; overflow: hidden; border: 1px #EAEDF2 solid; justify-content: center; align-items: center; gap: 4px; display: flex">
+              <div
+                style="padding-left: 4px; padding-right: 4px; justify-content: center; align-items: center; gap: 8px; display: flex">
+                <div
+                  style="text-align: center; color: #555F75; font-size: 14px; font-family: Inter; font-weight: 500; line-height: 20px; word-wrap: break-word">
+                  Export Prices
+                </div>
+              </div>
+              <app-downloads-icon [downloadsIconColor]="'#838998FF'"></app-downloads-icon>
+            </div>
+          </button>
+
+          <button style="background: none; border: none; cursor: pointer; padding: 0;">
+            <div
+              style="height: 20px; padding: 8px; background: white; border-radius: 8px; overflow: hidden; border: 1px #EAEDF2 solid; justify-content: center; align-items: center; gap: 4px; display: flex">
+              <div
+                style="padding-left: 4px; padding-right: 4px; justify-content: center; align-items: center; gap: 8px; display: flex">
+                <div
+                  style="text-align: center; color: #555F75; font-size: 14px; font-family: Inter; font-weight: 500; line-height: 20px; word-wrap: break-word">
+                  Export Products
+                </div>
+              </div>
+              <app-downloads-icon [downloadsIconColor]="'#838998FF'"></app-downloads-icon>
+            </div>
+          </button>
+
+          <button style="background: none; border: none; cursor: pointer; padding: 0;">
+            <div
+              style="padding: 8px; background: white; border-radius: 8px; overflow: hidden; border: 1px #EAEDF2 solid; justify-content: center; align-items: center; gap: 4px; display: flex">
+              <div
+                style="padding-left: 4px; padding-right: 4px; justify-content: center; align-items: center; gap: 8px; display: flex">
+                <div
+                  style="text-align: center; color: #555F75; font-size: 14px; font-family: Inter; font-weight: 500; line-height: 20px; word-wrap: break-word">
+                  Edit Columns
+                </div>
+              </div>
+              <svg fill="none" height="16" viewBox="0 0 18 16" width="18" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M4.125 1.25024C5.17835 1.25024 5.70502 1.25024 6.08335 1.53464C6.24714 1.65776 6.38777 1.81596 6.4972 2.00022C6.75 2.42585 6.75 3.01835 6.75 4.20337L6.75 11.7971C6.75 12.9821 6.75 13.5746 6.4972 14.0003C6.38777 14.1845 6.24714 14.3427 6.08335 14.4658C5.70502 14.7502 5.17835 14.7502 4.125 14.7502C3.07165 14.7502 2.54498 14.7502 2.16664 14.4658C2.00286 14.3427 1.86223 14.1845 1.7528 14.0003C1.5 13.5746 1.5 12.9821 1.5 11.7971L1.5 4.20337C1.5 3.01835 1.5 2.42585 1.7528 2.00022C1.86223 1.81596 2.00286 1.65776 2.16665 1.53464C2.54498 1.25024 3.07165 1.25024 4.125 1.25024Z"
+                  stroke="#555F75" stroke-width="1.35" />
+                <path
+                  d="M15 7.95312L15 11.7969C15 12.9819 15 13.5744 14.7472 14C14.6378 14.1843 14.4971 14.3425 14.3334 14.4656C13.955 14.75 13.4283 14.75 12.375 14.75C11.3217 14.75 10.795 14.75 10.4166 14.4656C10.2529 14.3425 10.1122 14.1843 10.0028 14C9.75 13.5744 9.75 12.9819 9.75 11.7969L9.75 4.20313C9.75 3.01811 9.75 2.4256 10.0028 1.99998"
+                  stroke="#555F75" stroke-linecap="round" stroke-width="1.35" />
+                <path
+                  d="M14.7166 1.67423C14.8843 1.49257 14.9681 1.40174 15.0572 1.34876C15.2721 1.22092 15.5368 1.21695 15.7553 1.33827C15.8459 1.38855 15.9323 1.47683 16.1051 1.65337C16.278 1.82992 16.3644 1.91819 16.4136 2.01071C16.5324 2.23395 16.5285 2.50433 16.4033 2.72391C16.3515 2.81491 16.2625 2.90055 16.0847 3.07183L13.9689 5.10972C13.6319 5.4343 13.4634 5.59659 13.2528 5.67884C13.0422 5.76109 12.8107 5.75504 12.3477 5.74293L12.2847 5.74128C12.1438 5.7376 12.0733 5.73575 12.0323 5.68926C11.9913 5.64277 11.9969 5.57097 12.0081 5.42739L12.0142 5.34942C12.0457 4.9453 12.0614 4.74324 12.1403 4.5616C12.2192 4.37996 12.3554 4.23248 12.6276 3.93751L14.7166 1.67423Z"
+                  stroke="#555F75" stroke-linejoin="round" stroke-width="1.35" />
+              </svg>
+
+            </div>
+          </button>
+        </div>
+      </div>
+      <!--      todo-->
+      <div
+        style="margin-top: -10px;height: 804px; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 16px; display: flex">
+        <table style="width: 1128px; border-collapse: collapse;">
+          <thead>
+
+          <tr style="background: #F8FAFB;">
+            <th
+              style="padding: 12px; text-align: left; color: #323741; font-size: 14px; font-family: Inter; font-weight: 400; line-height: 20px; border-top-left-radius: 14px;">
+              <app-checkbox (checkboxChange)="this.isChecked = $event"></app-checkbox>
+
+              {{ headers[0] }}
+            </th>
+            <th
+              style="padding: 12px; text-align: left; color: #323741; font-size: 14px; font-family: Inter; font-weight: 400; line-height: 20px;">
+              {{ headers[1] }}
+            </th>
+            <th
+              style="padding: 12px; text-align: left; color: #323741; font-size: 14px; font-family: Inter; font-weight: 400; line-height: 20px;">
+              {{ headers[2] }}
+            </th>
+            <th
+              style="padding: 12px; text-align: left; color: #323741; font-size: 14px; font-family: Inter; font-weight: 400; line-height: 20px;">
+              {{ headers[3] }}
+            </th>
+            <th
+              style="padding: 12px; text-align: left; color: #323741; font-size: 14px; font-family: Inter; font-weight: 400; line-height: 20px;">
+              {{ headers[4] }}
+            </th>
+            <th
+              style="padding: 12px; text-align: left; color: #323741; font-size: 14px; font-family: Inter; font-weight: 400; line-height: 20px;">
+              {{ headers[5] }}
+            </th>
+            <th
+              style="padding: 12px; text-align: left; color: #323741; font-size: 14px; font-family: Inter; font-weight: 400; line-height: 20px; border-top-right-radius: 14px;">
+              {{ headers[6] }}
+            </th>
+            <th
+              style="padding: 12px; text-align: left; color: #323741; font-size: 14px; font-family: Inter; font-weight: 400; line-height: 20px; border-top-right-radius: 14px;">
+              {{ headers[7] }}
+            </th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr *ngFor="let row of paginationService.paginatedData" style="border-bottom: 1px solid #EAEDF2;">
+            <td style="padding: 12px;">
+              <div style="display: flex; align-items: center; gap: 12px;">
+                <app-checkbox [isChecked]="isChecked"></app-checkbox>
+                <img src="https://via.placeholder.com/40x40" style="width: 40px; height: 40px; border-radius: 9999px" />
+                <div>
+                  <div
+                    style="color: #0F0F10; font-size: 14px; font-family: Inter; font-weight: 500;">{{ row.customerName }}
+                  </div>
+                </div>
+              </div>
+            </td>
+            <td
+              style="padding: 12px; color: #0F0F10; font-size: 14px; font-family: Inter; font-weight: 500;">{{ row.productName }}
+            </td>
+            <td
+              style="padding: 12px; color: #0F0F10; font-size: 14px; font-family: Inter; font-weight: 500;">{{ row.pricing }}
+            </td>
+            <td
+              style="padding: 12px; color: #0F0F10; font-size: 14px; font-family: Inter; font-weight: 500;">{{ row.createdDate }}
+            </td>
+            <td
+              style="padding: 12px; color: #0F0F10; font-size: 14px; font-family: Inter; font-weight: 500;">{{ row.updatedDate }}
+            </td>
+            <td
+              style="padding: 12px; color: #0F0F10; font-size: 14px; font-family: Inter; font-weight: 500;">{{ row.orderId }}
+            </td>
+            <td style="padding: 12px;">
+              <div [ngSwitch]="row.status">
+                <button style="background: none; border: none; cursor: pointer; padding: 0;">
+                  <div *ngSwitchCase="'Available'"
+                       style="padding: 3px 8px; background: #E1F4EF; box-shadow: 0px -1px 0px rgba(64, 196, 170, 0.15) inset; border-radius: 4px; border: 1px #40C4AA solid; display: inline-flex; align-items: center;">
+                    <div
+                      style="width: 6px; height: 6px; background: #29896E; border-radius: 50%; margin-right: 4px;"></div>
+                    <span
+                      style="color: #29896E; font-size: 12px; font-family: Inter; font-weight: 500;">{{ row.status }}</span>
+                  </div>
+                </button>
+                <button style="background: none; border: none; cursor: pointer; padding: 0;">
+                  <div *ngSwitchCase="'Low of stock'"
+                       style="padding: 3px 8px; background: #FDF3E2; box-shadow: 0px -1px 0px rgba(255, 189, 76, 0.15) inset; border-radius: 4px; border: 1px #FFBD4C solid; display: inline-flex; align-items: center;">
+                    <div
+                      style="width: 6px; height: 6px; background: #B58330; border-radius: 50%; margin-right: 4px;"></div>
+                    <span
+                      style="color: #B58330; font-size: 12px; font-family: Inter; font-weight: 500;">{{ row.status }}</span>
+                  </div>
+                </button>
+                <button style="background: none; border: none; cursor: pointer; padding: 0;">
+                  <div *ngSwitchCase="'Out of stock'"
+                       style="padding: 3px 8px; background: #FADFE3; box-shadow: 0px -1px 0px rgba(223, 28, 65, 0.25) inset; border-radius: 4px; border: 1px #DF1C41 solid; display: inline-flex; align-items: center;">
+                    <div
+                      style="width: 6px; height: 6px; background: #A72131; border-radius: 50%; margin-right: 4px;"></div>
+                    <span
+                      style="color: #A72131; font-size: 12px; font-family: Inter; font-weight: 500;">{{ row.status }}</span>
+                  </div>
+                </button>
+              </div>
+            </td>
+            <td style="padding: 12px;">
+              <div style="display: flex; gap: 6px;">
+                <button style="background: none; border: none; cursor: pointer; padding: 6px;">
+                  <svg fill="none" height="20" viewBox="0 0 20 20" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M11.7167 7.51667L12.4833 8.28333L4.93333 15.8333H4.16667V15.0667L11.7167 7.51667ZM14.7167 2.5C14.5083 2.5 14.2917 2.58333 14.1333 2.74167L12.6083 4.26667L15.7333 7.39167L17.2583 5.86667C17.5833 5.54167 17.5833 5.01667 17.2583 4.69167L15.3083 2.74167C15.1417 2.575 14.9333 2.5 14.7167 2.5ZM11.7167 5.15833L2.5 14.375V17.5H5.625L14.8417 8.28333L11.7167 5.15833Z"
+                      fill="#555F75" />
+                  </svg>
+                </button>
+                <button style="background: none; border: none; cursor: pointer; padding: 6px;">
+                  <svg fill="none" height="20" viewBox="0 0 20 20" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M5 15.8333C5 16.75 5.75 17.5 6.66667 17.5H13.3333C14.25 17.5 15 16.75 15 15.8333V5.83333H5V15.8333ZM15.8333 3.33333H12.9167L12.0833 2.5H7.91667L7.08333 3.33333H4.16667V5H15.8333V3.33333Z"
+                      fill="#555F75" />
+                  </svg>
+                </button>
+              </div>
+            </td>
+          </tr>
+          </tbody>
+        </table>
+        <div
+          style="width: 1128px; padding: 16px; background: white; border-top-left-radius: 8px; border-top-right-radius: 8px; display: flex; justify-content: space-between; align-items: center;">
+          <div style="color: #0F0F10; font-size: 14px; font-family: Inter; font-weight: 500; line-height: 20px;">
+            Showing {{ paginationService.startIndex + 1 }}-{{ paginationService.endIndex }}
+            of {{ paginationService.data.length }} entries
+          </div>
+          <div style="display: flex; align-items: center; gap: 8px;margin-right: 29px">
+            <button (click)="paginationService.prevPage()" [disabled]="paginationService.currentPage === 1"
+                    style="background: none; border: none; cursor: pointer; padding: 0;">
+              <div
+                style="height: 32px; padding: 7px 9px; background: white; box-shadow: 0px 1px 2px rgba(228, 229, 231, 0.24); border-radius: 8px; border: 1px #EAEDF2 solid; display: flex; align-items: center; gap: 4px;">
+                <app-left-arrow-icon></app-left-arrow-icon>
+                <span style="color: #888E9E; font-size: 12px; font-family: Inter; font-weight: 500; line-height: 18px;">Previous</span>
+              </div>
+            </button>
+            <div style="display: flex; gap: 8px;">
+              @if (paginationService.data.length > paginationService.pageSize) {
+                <ng-container *ngFor="let page of paginationService.pageNumbers">
+
+                  <div (click)="paginationService.goToPage(page)"
+                       [style.background]="paginationService.currentPage === page ? '#0F0F10' : 'white'"
+                       [style.color]="paginationService.currentPage === page ? 'white' : '#0F0F10'"
+                       style="height: 32px; width: 32px; display: flex; justify-content: center; align-items: center; box-shadow: 0px 1px 2px rgba(228, 229, 231, 0.24); border-radius: 8px; border: 1px #EAEDF2 solid; cursor: pointer;">
+                    {{ page }}
+                  </div>
+                </ng-container>
+              }
+            </div>
+            <button (click)="paginationService.nextPage()"
+                    [disabled]="paginationService.currentPage === paginationService.totalPages"
+                    style="background: none; border: none; cursor: pointer; padding: 0;">
+              <div
+                style="height: 32px; padding: 7px 9px; background: white; box-shadow: 0px 1px 2px rgba(228, 229, 231, 0.24); border-radius: 8px; border: 1px #EAEDF2 solid; display: flex; align-items: center; gap: 4px;">
+                <span style="color: #888E9E; font-size: 12px; font-family: Inter; font-weight: 500; line-height: 18px;">Next</span>
+                <app-right-arrow-icon></app-right-arrow-icon>
+              </div>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    style="height: 156px; padding: 16px; left: 280px; top: 162px; position: absolute; background: white; box-shadow: 0px 4px 10px #F8FAFB; border-radius: 8px; border: 1px #EAEDF2 solid; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 16px; display: inline-flex">
+    <div style="flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 24px; display: flex">
+      <div style="justify-content: flex-start; align-items: flex-start; gap: 81px; display: inline-flex">
+        <div style="justify-content: flex-start; align-items: flex-start; gap: 8px; display: flex">
+          <div
+            style="width: 20px; height: 20px; padding: 1.67px; justify-content: center; align-items: center; display: flex">
+            <div style="width: 16.67px; height: 16.67px; position: relative">
+              <div
+                style="width: 0px; height: 3.33px; left: 1.67px; top: 10.83px; position: absolute; border: 1.50px #555F75 solid"></div>
+              <div
+                style="width: 0px; height: 8.33px; left: 8.33px; top: 5.83px; position: absolute; border: 1.50px #555F75 solid"></div>
+              <div
+                style="width: 0px; height: 16.67px; left: 16.67px; top: 16.67px; position: absolute; transform: rotate(90deg); transform-origin: 0 0; border: 1.50px #555F75 solid"></div>
+              <div
+                style="width: 0px; height: 5px; left: 15px; top: 9.17px; position: absolute; border: 1.50px #555F75 solid"></div>
+              <div
+                style="width: 16.67px; height: 8.33px; left: 0px; top: 0px; position: absolute; border: 1.50px #555F75 solid"></div>
+            </div>
+          </div>
+          <div
+            style="width: 391px; color: #323741; font-size: 14px; font-family: Inter; font-weight: 500; line-height: 20px; word-wrap: break-word">
+            Avg. Monthly Revenue
+          </div>
+        </div>
+        <div
+          style="width: 20px; height: 20px; padding-left: 5px; padding-right: 4.99px; justify-content: center; align-items: center; display: flex">
+          <div style="width: 10.01px; height: 0.83px; position: relative">
+            <div
+              style="width: 0.01px; height: 0.83px; left: 5px; top: 0px; position: absolute; border: 2.50px #888E9E solid"></div>
+            <div
+              style="width: 0.01px; height: 0.83px; left: 10px; top: 0px; position: absolute; border: 2.50px #888E9E solid"></div>
+            <div
+              style="width: 0.01px; height: 0.83px; left: 0px; top: 0px; position: absolute; border: 2.50px #888E9E solid"></div>
+          </div>
+        </div>
+      </div>
+      <div style="justify-content: flex-start; align-items: flex-end; gap: 47px; display: inline-flex">
+        <div
+          style="flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 6px; display: inline-flex">
+          <div
+            style="color: #0F0F10; font-size: 24px; font-family: Inter; font-weight: 600; line-height: 34px; word-wrap: break-word">
+            $450,268.00
+          </div>
+          <div style="justify-content: flex-start; align-items: flex-start; gap: 5px; display: inline-flex">
+            <div
+              style="color: #37B793; font-size: 14px; font-family: Inter; font-weight: 500; line-height: 20px; word-wrap: break-word">
+              +16,4%
+            </div>
+            <div
+              style="color: #888E9E; font-size: 14px; font-family: Inter; font-weight: 400; line-height: 20px; word-wrap: break-word">
+              From last month
+            </div>
+          </div>
+        </div>
+        <div style="width: 310px; height: 80px; position: relative">
+          <div style="width: 1px; height: 74px; left: 301px; top: 2px; position: absolute; background: white"></div>
+          <div style="width: 1px; height: 74px; left: 251px; top: 2px; position: absolute; background: white"></div>
+          <div style="width: 1px; height: 74px; left: 202px; top: 2px; position: absolute; background: white"></div>
+          <div style="width: 1px; height: 74px; left: 150px; top: 2px; position: absolute; background: white"></div>
+          <div style="width: 1px; height: 74px; left: 101px; top: 2px; position: absolute; background: white"></div>
+          <div style="width: 1px; height: 74px; left: 52px; top: 2px; position: absolute; background: white"></div>
+          <div
+            style="width: 302px; height: 74px; left: 6px; top: 6px; position: absolute; background: linear-gradient(180deg, rgba(100, 56, 245, 0.20) 0%, rgba(100, 56, 245, 0) 100%)"></div>
+          <div
+            style="width: 302px; height: 42px; left: 6px; top: 6px; position: absolute; background: linear-gradient(180deg, rgba(98, 104, 242, 0.30) 0%, rgba(98, 104, 242, 0) 100%); border-radius: 6px; border: 1.50px #6438F5 solid"></div>
+          <div
+            style="left: 302px; top: 17px; position: absolute; justify-content: flex-start; align-items: flex-start; gap: 10px; display: inline-flex">
+            <div style="width: 8px; height: 8px; background: #6438F5; border-radius: 9999px"></div>
+            <div style="width: 4px; height: 4px; background: white; border-radius: 9999px"></div>
+          </div>
+          <div
+            style="left: 241px; top: 36px; position: absolute; justify-content: flex-start; align-items: flex-start; gap: 10px; display: inline-flex">
+            <div style="width: 8px; height: 8px; background: #6438F5; border-radius: 9999px"></div>
+            <div style="width: 4px; height: 4px; background: white; border-radius: 9999px"></div>
+          </div>
+          <div
+            style="left: 203px; top: 11px; position: absolute; justify-content: flex-start; align-items: flex-start; gap: 10px; display: inline-flex">
+            <div style="width: 8px; height: 8px; background: #6438F5; border-radius: 9999px"></div>
+            <div style="width: 4px; height: 4px; background: white; border-radius: 9999px"></div>
+          </div>
+          <div
+            style="left: 171px; top: 39px; position: absolute; justify-content: flex-start; align-items: flex-start; gap: 10px; display: inline-flex">
+            <div style="width: 8px; height: 8px; background: #6438F5; border-radius: 9999px"></div>
+            <div style="width: 4px; height: 4px; background: white; border-radius: 9999px"></div>
+          </div>
+          <div
+            style="left: 109px; top: 38px; position: absolute; justify-content: flex-start; align-items: flex-start; gap: 10px; display: inline-flex">
+            <div style="width: 8px; height: 8px; background: #6438F5; border-radius: 9999px"></div>
+            <div style="width: 4px; height: 4px; background: white; border-radius: 9999px"></div>
+          </div>
+          <div
+            style="left: 86.50px; top: 8px; position: absolute; justify-content: flex-start; align-items: flex-start; gap: 10px; display: inline-flex">
+            <div style="width: 8px; height: 8px; background: #6438F5; border-radius: 9999px"></div>
+            <div style="width: 4px; height: 4px; background: white; border-radius: 9999px"></div>
+          </div>
+          <div
+            style="left: 61px; top: 26px; position: absolute; justify-content: flex-start; align-items: flex-start; gap: 10px; display: inline-flex">
+            <div style="width: 8px; height: 8px; background: #6438F5; border-radius: 9999px"></div>
+            <div style="width: 4px; height: 4px; background: white; border-radius: 9999px"></div>
+          </div>
+          <div
+            style="left: 31px; top: 0px; position: absolute; justify-content: flex-start; align-items: flex-start; gap: 10px; display: inline-flex">
+            <div style="width: 8px; height: 8px; background: #6438F5; border-radius: 9999px"></div>
+            <div style="width: 4px; height: 4px; background: white; border-radius: 9999px"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    style="height: 156px; padding: 16px; left: 856px; top: 162px; position: absolute; background: white; box-shadow: 0px 4px 10px #F8FAFB; border-radius: 8px; border: 1px #EAEDF2 solid; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 16px; display: inline-flex">
+    <div style="flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 16px; display: flex">
+      <div style="width: 232px; justify-content: flex-start; align-items: flex-start; gap: 72px; display: inline-flex">
+        <div style="justify-content: flex-start; align-items: flex-start; gap: 8px; display: flex">
+          <div
+            style="width: 20px; height: 20px; padding-left: 1.67px; padding-right: 1.67px; padding-top: 2.50px; padding-bottom: 2.50px; justify-content: center; align-items: center; display: flex">
+            <div style="width: 16.67px; height: 15px; position: relative">
+              <div
+                style="width: 6.67px; height: 6.67px; left: 2.50px; top: 0px; position: absolute; border: 1.50px #555F75 solid"></div>
+              <div
+                style="width: 3.33px; height: 6.67px; left: 10.83px; top: 0px; position: absolute; border: 1.50px #555F75 solid"></div>
+              <div
+                style="width: 11.67px; height: 5.83px; left: 0px; top: 9.17px; position: absolute; border: 1.50px #555F75 solid"></div>
+              <div
+                style="width: 4.17px; height: 5.83px; left: 12.50px; top: 9.17px; position: absolute; border: 1.50px #555F75 solid"></div>
+            </div>
+          </div>
+          <div
+            style="color: #323741; font-size: 14px; font-family: Inter; font-weight: 500; line-height: 20px; word-wrap: break-word">
+            Active Customer
+          </div>
+        </div>
+        <div
+          style="width: 20px; height: 20px; padding-left: 5px; padding-right: 4.99px; justify-content: center; align-items: center; display: flex">
+          <div style="width: 10.01px; height: 0.83px; position: relative">
+            <div
+              style="width: 0.01px; height: 0.83px; left: 5px; top: 0px; position: absolute; border: 2.50px #888E9E solid"></div>
+            <div
+              style="width: 0.01px; height: 0.83px; left: 10px; top: 0px; position: absolute; border: 2.50px #888E9E solid"></div>
+            <div
+              style="width: 0.01px; height: 0.83px; left: 0px; top: 0px; position: absolute; border: 2.50px #888E9E solid"></div>
+          </div>
+        </div>
+      </div>
+      <div
+        style="height: 88px; flex-direction: column; justify-content: flex-start; align-items: flex-end; display: flex">
+        <div style="width: 124px; height: 61px; position: relative">
+          <div style="width: 1px; height: 58px; left: 0px; top: 0px; position: absolute; background: white"></div>
+          <div style="width: 1px; height: 58px; left: 29px; top: 0px; position: absolute; background: white"></div>
+          <div style="width: 1px; height: 58px; left: 58px; top: 0px; position: absolute; background: white"></div>
+          <div style="width: 1px; height: 58px; left: 87px; top: 0px; position: absolute; background: white"></div>
+          <div style="width: 1px; height: 58px; left: 116px; top: 0px; position: absolute; background: white"></div>
+          <div
+            style="width: 117px; height: 58px; left: 4px; top: 3px; position: absolute; background: linear-gradient(176deg, rgba(55, 183, 147, 0.20) 0%, rgba(55, 183, 147, 0) 100%)"></div>
+          <div
+            style="width: 115px; height: 52.98px; left: 4.50px; top: 3px; position: absolute; border: 2px #37B793 solid"></div>
+          <div
+            style="width: 6px; height: 6px; left: 118px; top: 17px; position: absolute; border-radius: 9999px; border: 2px #37B793 solid"></div>
+        </div>
+        <div
+          style="height: 60px; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 6px; display: flex">
+          <div
+            style="color: #0F0F10; font-size: 24px; font-family: Inter; font-weight: 600; line-height: 34px; word-wrap: break-word">
+            4,780
+          </div>
+          <div style="justify-content: flex-start; align-items: flex-start; gap: 5px; display: inline-flex">
+            <div
+              style="color: #37B793; font-size: 14px; font-family: Inter; font-weight: 500; line-height: 20px; word-wrap: break-word">
+              +04,16%
+            </div>
+            <div
+              style="color: #888E9E; font-size: 14px; font-family: Inter; font-weight: 400; line-height: 20px; word-wrap: break-word">
+              From last month
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    style="height: 156px; padding: 16px; left: 1144px; top: 162px; position: absolute; background: white; box-shadow: 0px 4px 10px #F8FAFB; border-radius: 8px; border: 1px #EAEDF2 solid; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 16px; display: inline-flex">
+    <div style="flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 16px; display: flex">
+      <div style="justify-content: flex-start; align-items: flex-start; gap: 60px; display: inline-flex">
+        <div style="justify-content: flex-start; align-items: flex-start; gap: 8px; display: flex">
+          <div
+            style="width: 20px; height: 20px; padding: 1.67px; justify-content: center; align-items: center; display: flex">
+            <div style="width: 16.67px; height: 16.67px; position: relative">
+              <div
+                style="width: 12.50px; height: 9.17px; left: 2.08px; top: 3.33px; position: absolute; border: 1.50px #555F75 solid"></div>
+              <div
+                style="width: 12.50px; height: 3.33px; left: 2.08px; top: 0px; position: absolute; border: 1.50px #555F75 solid"></div>
+              <div
+                style="width: 2.50px; height: 0px; left: 7.08px; top: 5.83px; position: absolute; border: 1.50px #555F75 solid"></div>
+              <div
+                style="width: 16.67px; height: 2.08px; left: 16.67px; top: 14.58px; position: absolute; transform: rotate(-180deg); transform-origin: 0 0; border: 1.50px #555F75 solid"></div>
+            </div>
+          </div>
+          <div
+            style="color: #323741; font-size: 14px; font-family: Inter; font-weight: 500; line-height: 20px; word-wrap: break-word">
+            Archived Products
+          </div>
+        </div>
+        <div
+          style="width: 20px; height: 20px; padding-left: 5px; padding-right: 4.99px; justify-content: center; align-items: center; display: flex">
+          <div style="width: 10.01px; height: 0.83px; position: relative">
+            <div
+              style="width: 0.01px; height: 0.83px; left: 5px; top: 0px; position: absolute; border: 2.50px #888E9E solid"></div>
+            <div
+              style="width: 0.01px; height: 0.83px; left: 10px; top: 0px; position: absolute; border: 2.50px #888E9E solid"></div>
+            <div
+              style="width: 0.01px; height: 0.83px; left: 0px; top: 0px; position: absolute; border: 2.50px #888E9E solid"></div>
+          </div>
+        </div>
+      </div>
+      <div style="flex-direction: column; justify-content: flex-start; align-items: flex-end; display: flex">
+        <div style="width: 118px; height: 63px; position: relative">
+          <div style="width: 1px; height: 58px; left: 0px; top: 0px; position: absolute; background: white"></div>
+          <div style="width: 1px; height: 58px; left: 28.88px; top: 0px; position: absolute; background: white"></div>
+          <div style="width: 1px; height: 58px; left: 57.75px; top: 0px; position: absolute; background: white"></div>
+          <div style="width: 1px; height: 58px; left: 86.63px; top: -0px; position: absolute; background: white"></div>
+          <div style="width: 1px; height: 58px; left: 115.51px; top: -0px; position: absolute; background: white"></div>
+          <div
+            style="width: 112.52px; height: 48px; left: 0px; top: 15px; position: absolute; background: linear-gradient(180deg, rgba(222, 44, 65, 0.20) 0%, rgba(222, 44, 65, 0) 92%)"></div>
+          <div
+            style="width: 112.03px; height: 38.09px; left: 0.50px; top: 14.92px; position: absolute; border: 2px #DE2C41 solid"></div>
+          <div
+            style="width: 5.97px; height: 6px; left: 112.03px; top: 15.42px; position: absolute; border-radius: 9999px; border: 2px #DE2C41 solid"></div>
+        </div>
+        <div
+          style="height: 62px; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 8px; display: flex">
+          <div
+            style="color: #0F0F10; font-size: 24px; font-family: Inter; font-weight: 600; line-height: 34px; word-wrap: break-word">
+            2,926
+          </div>
+          <div style="justify-content: flex-start; align-items: flex-start; gap: 4px; display: inline-flex">
+            <div
+              style="color: #DE2C41; font-size: 14px; font-family: Inter; font-weight: 500; line-height: 20px; word-wrap: break-word">
+              +12,14%
+            </div>
+            <div
+              style="color: #888E9E; font-size: 14px; font-family: Inter; font-weight: 400; line-height: 20px; word-wrap: break-word">
+              From last month
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

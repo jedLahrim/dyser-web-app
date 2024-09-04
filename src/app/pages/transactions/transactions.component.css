@@ -1,0 +1,10 @@
+button:hover div {
+  /*background: lightgray;*/
+  opacity: 89%;
+}
+
+.hover {
+  background-color: #ebebeb;
+  opacity: 90%;
+}
+

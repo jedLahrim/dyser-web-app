@@ -1,0 +1,174 @@
+<div
+  style="height: 800px; ;width:auto; left: 280px; top: 720px; position: absolute; flex-direction: column; justify-content: flex-start; align-items: flex-start;
+  gap: 16px; display: inline-flex;margin-top: 40px">
+  <div style="justify-content: flex-start; align-items: center; gap: 95px; display: inline-flex">
+    <div
+      style="width: 652px; text-align: justify; color: #0F0F10; font-size: 18px; font-family: Inter; font-weight: 500; line-height: 24px; word-wrap: break-word">
+      Transaction history
+    </div>
+    <div style="justify-content: flex-start; align-items: flex-start; gap: 10px; display: flex;margin-left: -45px">
+      <div
+        style="padding: 8px; background: white; border-radius: 8px; overflow: hidden; border: 1px #EAEDF2 solid; justify-content: center; align-items: center; gap: 4px; display: flex">
+        <button style="background: none; border: none; cursor: pointer; padding: 0;">
+          <div
+            style="width: 20px; height: 20px; padding: 1.67px; justify-content: center; align-items: center; display: flex">
+            <app-search-icon></app-search-icon>
+          </div>
+        </button>
+        <div
+          style="padding-left: 4px; padding-right: 4px; justify-content: center; align-items: center; gap: 8px; display: flex">
+          <input
+            onblur="this.placeholder = 'Search Transaction'"
+            onfocus="this.placeholder = ''"
+            placeholder="Search Transaction"
+            style="text-align: center; color: #888E9E; font-size: 12px; font-family: Inter; font-weight: 400; line-height: 18px; word-wrap: break-word; border: none; outline: none; background: transparent;"
+            type="text" />
+        </div>
+      </div>
+      <button (click)="toggleDropdown()" style="background: none; border: none; cursor: pointer; padding: 0;">
+        <div
+          style="padding: 8px; background: white; border-radius: 8px; overflow: hidden; border: 1px #EAEDF2 solid; justify-content: center; align-items: center; gap: 4px; display: flex">
+          <div
+            style="padding-left: 4px; padding-right: 4px; justify-content: center; align-items: center; gap: 8px; display: flex">
+            <div
+              style="text-align: center; color: #888E9E; font-size: 12px; font-family: Inter; font-weight: 400; line-height: 18px; word-wrap: break-word">
+              {{ selectedOption }}
+            </div>
+          </div>
+          <app-down-arrow-icon></app-down-arrow-icon>
+        </div>
+      </button>
+
+      <div
+        *ngIf="dropdownOpen"
+        style="position: absolute; background: white; border: 1px solid #EAEDF2; border-radius: 8px; z-index: 10; margin-top: 40px; margin-left: 205px; width: 120px;">
+        <div
+          (click)="selectOption(option)"
+          (mouseenter)="hoveredOption = option"
+          (mouseleave)="hoveredOption = null"
+          *ngFor="let option of options"
+          [ngClass]="{'hover': hoveredOption === option}"
+          style="text-align: center; color: #888E9E; font-size: 14px; font-family: Inter; font-weight: 400; line-height: 18px; word-wrap: break-word; padding: 8px; cursor: pointer;">
+          {{ option }}
+        </div>
+      </div>
+      <button style="background: none; border: none; cursor: pointer; padding: 0;">
+        <div
+          style="padding: 8px; background: white; border-radius: 8px; overflow: hidden; border: 1px #EAEDF2 solid; justify-content: center; align-items: center; gap: 4px; display: flex">
+          <app-filter-icon></app-filter-icon>
+          <div
+            style="padding-left: 4px; padding-right: 4px; justify-content: center; align-items: center; gap: 8px; display: flex">
+            <div
+              style="text-align: center; color: #888E9E; font-size: 14px; font-family: Inter; font-weight: 500; line-height: 20px; word-wrap: break-word">
+              Filter
+            </div>
+          </div>
+        </div>
+      </button>
+    </div>
+  </div>
+  <div style="flex-direction: column; justify-content: flex-start; align-items: flex-start; display: flex">
+    <table class="transaction-table" style="width: 1123px">
+      <thead>
+      <tr>
+        <th style="font-family: Inter; font-weight: lighter; position: relative">
+          <app-checkbox (checkboxChange)="this.isChecked = $event" [marginTop]="'2px'"></app-checkbox>
+          Invoice
+        </th>
+        <th style="font-family: Inter; font-weight: lighter;">Transactions</th>
+        <th style="font-family: Inter; font-weight: lighter;">Method</th>
+        <th style="font-family: Inter; font-weight: lighter;">Category</th>
+        <th style="font-family: Inter; font-weight: lighter;">Date</th>
+        <th style="font-family: Inter; font-weight: lighter;">Amount</th>
+        <th style="font-family: Inter; font-weight: lighter; margin-left: -20px">Status</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let transaction of paginationService.paginatedData; let i = index">
+        <td style="font-family: Inter; white-space: nowrap; position: relative;">
+          <app-checkbox [isChecked]="isChecked" [marginTop]="'2px'"></app-checkbox>
+          {{ transaction.invoice }}
+        </td>
+        <td style="font-family: Inter; white-space: nowrap">
+          <div class="transaction-info">
+            @switch (transaction.method) {
+              @case ("Master Card") {
+                <app-master-card-icon></app-master-card-icon>
+              }
+              @case ("Online Payment") {
+                <app-visa-icon></app-visa-icon>
+              }
+              @case ("Bank Payment") {
+                <app-paypal-icon></app-paypal-icon>
+              }
+              @case ("Visa Card") {
+                <app-web-money-icon></app-web-money-icon>
+              }
+              @default {
+                <app-master-card-icon></app-master-card-icon>
+              }
+            }
+            <div style="margin-left: 10px">
+              <div>{{ transaction.cardType }}</div>
+              <div class="sub-text">{{ transaction.cardDescription }}</div>
+            </div>
+          </div>
+        </td>
+        <td style="font-family: Inter">{{ transaction.method }}</td>
+        <td style="font-family: Inter">{{ transaction.category }}</td>
+        <td style="font-family: Inter; white-space: nowrap">{{ transaction.date }}</td>
+        <td [ngClass]="{'negative': transaction.amount.startsWith('-')}" style="font-family: Inter">
+          {{ transaction.amount }}
+        </td>
+        <td style="font-family: Inter; white-space: nowrap">
+              <span [ngClass]="transaction.status=='Completed'? transaction.status.toLowerCase():'onProgress'"
+                    class="status">
+                {{ transaction.status }}
+              </span>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+
+    <!-- Pagination controls -->
+    <div style="width: 100%; display: flex; justify-content: space-between; align-items: center; margin-top: 20px;">
+      <div>
+        Showing {{ paginationService.startIndex + 1 }}-{{ paginationService.endIndex }}
+        of {{ paginationService.data.length }} entries
+      </div>
+      <div style="display: flex; align-items: center; gap: 8px;">
+        <button (click)="paginationService.prevPage()" [disabled]="paginationService.currentPage === 1"
+                style="background: none; border: none; cursor: pointer; padding: 0;">
+          <div
+            style="height: 32px; padding: 7px 9px; background: white; box-shadow: 0px 1px 2px rgba(228, 229, 231, 0.24); border-radius: 8px; border: 1px #EAEDF2 solid; display: flex; align-items: center; gap: 4px;">
+            <app-left-arrow-icon></app-left-arrow-icon>
+            <span style="color: #888E9E; font-size: 12px; font-family: Inter; font-weight: 500; line-height: 18px;">Previous</span>
+          </div>
+        </button>
+        <div style="display: flex; gap: 8px;">
+          @if (paginationService.data.length > paginationService.pageSize) {
+            <ng-container *ngFor="let page of paginationService.pageNumbers">
+
+              <div (click)="paginationService.goToPage(page)"
+                   [style.background]="paginationService.currentPage === page ? '#0F0F10' : 'white'"
+                   [style.color]="paginationService.currentPage === page ? 'white' : '#0F0F10'"
+                   style="height: 32px; width: 32px; display: flex; justify-content: center; align-items: center; box-shadow: 0px 1px 2px rgba(228, 229, 231, 0.24); border-radius: 8px; border: 1px #EAEDF2 solid; cursor: pointer;">
+                {{ page }}
+              </div>
+            </ng-container>
+          }
+        </div>
+        <button (click)="paginationService.nextPage()"
+                [disabled]="paginationService.currentPage === paginationService.totalPages"
+                style="background: none; border: none; cursor: pointer; padding: 0;">
+          <div
+            style="height: 32px; padding: 7px 9px; background: white; box-shadow: 0px 1px 2px rgba(228, 229, 231, 0.24); border-radius: 8px; border: 1px #EAEDF2 solid; display: flex; align-items: center; gap: 4px;">
+            <span
+              style="color: #888E9E; font-size: 12px; font-family: Inter; font-weight: 500; line-height: 18px;">Next</span>
+            <app-right-arrow-icon></app-right-arrow-icon>
+          </div>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,9 @@
+.nav-active {
+  background-color: #ccc;
+  color: black;
+}
+
+.nav-item:hover {
+  background-color: rgba(204, 204, 204, 0.3); /* #ccc with 50% opacity */
+  color: black;
+}

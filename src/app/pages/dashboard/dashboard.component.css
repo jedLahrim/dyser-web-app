@@ -1,0 +1,49 @@
+button:hover div {
+  /*background: lightgray;*/
+  opacity: 89%;
+}
+
+.dashboard-menu {
+  width: 250px;
+}
+
+.menu-section {
+  margin-bottom: 20px;
+}
+
+.menu-section h3 {
+  font-size: 16px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.menu-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  margin-bottom: 8px;
+  background-color: #f4f4f4;
+  border: none;
+  border-radius: 4px;
+  color: #333;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s, color 0.3s;
+  width: 100%;
+  text-align: left;
+}
+
+.menu-item .arrow-icon {
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.menu-item:hover {
+  background-color: #ffffff;
+  color: #333;
+}
+
+.menu-item:hover .arrow-icon {
+  opacity: 1;
+}

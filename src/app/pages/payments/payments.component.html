@@ -1,0 +1,47 @@
+<div
+  style="margin-left: -10px;margin-top: -58px;width: 1440px; height: 1024px; position: relative; background: white; border-radius: 16px; overflow: hidden">
+  <div
+    style="height: 720px; width: 1420px;padding-bottom: 24px; left: 10px; top: 54px; position: absolute; background: #F8FAFB; border-radius: 16px; overflow: hidden; flex-direction: column; justify-content: flex-start; align-items: center; gap: 24px; display: inline-flex">
+    <div
+      style="align-self: stretch; height: 52px; padding-left: 16px; padding-right: 16px; padding-top: 8px; padding-bottom: 8px; background: #f4f4f5; border-top-left-radius: 12px; border-top-right-radius: 12px; border-bottom: 1px #EAEDF2 solid; justify-content: center; align-items: center; display: inline-flex">
+      <div
+        style="flex: 1 1 0; align-self: stretch; justify-content: space-between; align-items: center; display: inline-flex">
+        <div style="justify-content: flex-start; align-items: center; gap: 4px; display: flex">
+          <button (click)="onCancel()"
+                  style="margin-top: 3px;background: none; border: none; cursor: pointer; padding: 0;">
+            <app-close-remove-icon style="margin-top: 10px"></app-close-remove-icon>
+          </button>
+          <div
+            style="width: 1120px; color: #323741; font-size: 14px; font-family: Inter; font-weight: 400; line-height: 20px; word-wrap: break-word">
+            Create a payment link
+          </div>
+        </div>
+        <button style="background: none; border: none; cursor: pointer; padding: 0;">
+          <div
+            style="padding: 8px; background: linear-gradient(0deg, #0F0F10 0%, #0F0F10 100%), linear-gradient(180deg, rgba(255, 255, 255, 0.18) 0%, rgba(255, 255, 255, 0) 100%); box-shadow: 0px 0px 0px 1px #242628; border-radius: 8px; overflow: hidden; border: 1px rgba(255, 255, 255, 0.12) solid; justify-content: center; align-items: center; gap: 4px; display: flex">
+            <div
+              style="padding-left: 4px; padding-right: 4px; justify-content: center; align-items: center; gap: 8px; display: flex">
+              <div
+                style="text-align: center; color: white; font-size: 14px; font-family: Inter; font-weight: 500; line-height: 20px; word-wrap: break-word">
+                Create link
+              </div>
+            </div>
+            <svg fill="none" height="20" viewBox="0 0 20 20" width="20" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M2.08398 9.99992C2.08398 6.26797 2.08398 4.40199 3.24335 3.24262C4.40272 2.08325 6.2687 2.08325 10.0007 2.08325C13.7326 2.08325 15.5986 2.08325 16.7579 3.24262C17.9173 4.40199 17.9173 6.26797 17.9173 9.99992C17.9173 13.7319 17.9173 15.5978 16.7579 16.7572C15.5986 17.9166 13.7326 17.9166 10.0007 17.9166C6.2687 17.9166 4.40272 17.9166 3.24335 16.7572C2.08398 15.5978 2.08398 13.7319 2.08398 9.99992Z"
+                stroke="white" stroke-width="1.5" />
+              <path
+                d="M6.66797 11.4583C6.66797 11.4583 8.0013 12.2188 8.66797 13.3333C8.66797 13.3333 10.668 8.95833 13.3346 7.5"
+                stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" />
+            </svg>
+          </div>
+        </button>
+      </div>
+    </div>
+    <div
+      style="align-self: stretch; justify-content: flex-start; align-items: flex-start; gap: 24px; display: inline-flex">
+      <app-products></app-products>
+      <app-checkouts></app-checkouts>
+    </div>
+  </div>
+</div>

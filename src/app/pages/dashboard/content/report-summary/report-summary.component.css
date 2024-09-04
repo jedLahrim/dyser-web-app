@@ -1,0 +1,132 @@
+.dashboard-container {
+  font-family: 'Inter', sans-serif;
+  padding: 10px;
+  background: white;
+  border-radius: 8px;
+  border: 1px solid #EAEDF2;
+  max-width: 825px;
+  max-height: 380px;
+  margin-top: -420px;
+  margin-left: 280px;
+}
+
+.summary-section {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  flex-wrap: wrap;
+}
+
+.summary-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px;
+  width: 48%;
+}
+
+.indicator {
+  width: 3px;
+  height: 16px;
+  border-radius: 360px;
+  margin-right: 6px;
+}
+
+.purple {
+  background-color: #6438F5;
+}
+
+.green {
+  background-color: #37B793;
+}
+
+.blue {
+  background-color: #36B9E9;
+}
+
+.summary-label {
+  font-size: 10px;
+  color: #323741;
+}
+
+.summary-value {
+  font-size: 12px;
+  font-weight: 500;
+  color: #0F0F10;
+}
+
+.change {
+  font-size: 9px;
+  padding: 1px 4px;
+  border-radius: 999px;
+  margin-left: 4px;
+}
+
+.positive {
+  background-color: #E1F4EF;
+  color: #29896E;
+}
+
+.negative {
+  background-color: #FDEBDF;
+  color: #B65C21;
+}
+
+.chart-container {
+  height: 150px;
+  margin-bottom: 70px;
+  /* Add width and height to the canvas */
+}
+
+.chart-container canvas {
+  width: 100%;
+  height: 100%;
+}
+
+.subchart-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.subchart {
+  width: 30%;
+  text-align: center;
+}
+
+.subchart canvas {
+  width: 100%;
+  height: 100px; /* Explicit height for subcharts */
+}
+
+.subchart-label {
+  margin-top: 6px;
+  font-size: 10px;
+  color: #323741;
+}
+
+.sub-charts {
+  display: flex;
+  width: 100%;
+  max-width: 340px;
+  height: 260px;
+}
+
+/*.sub-charts .chart-container {*/
+/*  display: flex;*/
+/*  flex-direction: column;*/
+/*  align-items: center;*/
+/*  padding-bottom: 20px; !* Increase space below the chart *!*/
+/*}*/
+
+.sub-charts canvas {
+  margin-bottom: 10px; /* Adjust spacing between chart and label */
+}
+
+.sub-charts label {
+  margin-top: 10px; /* Ensure proper spacing between chart and label */
+  font-size: 14px;
+  color: #323741;
+}
+
+canvas {
+  display: block;
+}

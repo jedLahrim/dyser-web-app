@@ -1,1 +1,30 @@
 /* You can add global styles to this file, and also import other style files */
+button:hover div {
+  /*background: lightgray;*/
+  opacity: 89%;
+}
+
+.custom-dialog-container {
+  margin-top: 50px; /* Adjust the margin as needed */
+  margin-left: -6px;
+}
+
+.cdk-overlay-backdrop {
+  background: rgba(0, 0, 0, 0.5) !important; /* This controls the backdrop opacity */
+}
+
+
+button {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-focus-ring-color: transparent;
+  outline: none;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}

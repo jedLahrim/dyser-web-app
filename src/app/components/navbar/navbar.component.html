@@ -1,0 +1,17 @@
+<div class="navbar bg-neutral text-neutral-content">
+  <div class="flex-1">
+    <a [routerLinkActiveOptions]="{exact: true}" routerLink="/" routerLinkActive="nav-active">Bright Coding</a>
+  </div>
+  <div class="flex-none">
+    <ul class="menu menu-horizontal px-1">
+      <li><a [routerLinkActiveOptions]="{exact: true}" class="nav-item" routerLink="/home"
+             routerLinkActive="nav-active">Home</a></li>
+      <li><a [routerLinkActiveOptions]="{exact: true}" class="nav-item" routerLink="/todos"
+             routerLinkActive="nav-active">Todos</a></li>
+      <li><a [routerLinkActiveOptions]="{exact: true}" class="nav-item" routerLink="/counter"
+             routerLinkActive="nav-active">Counter</a></li>
+      <li><a [routerLinkActiveOptions]="{exact: true}" class="nav-item" routerLink="/users"
+             routerLinkActive="nav-active">Users</a></li>
+    </ul>
+  </div>
+</div>

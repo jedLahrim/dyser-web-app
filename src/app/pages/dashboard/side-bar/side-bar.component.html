@@ -1,0 +1,108 @@
+<div
+  [ngStyle]="{
+    'width': '248px',
+    'height': dynamicHeight + 'px',
+    'background': '#F8FAFB',
+    'border-right': '1px solid #EAEDF2',
+    'flex-direction': 'column',
+    'justify-content': 'flex-start',
+    'align-items': 'flex-start',
+    'display': 'inline-flex',
+    'margin-top': '3.3px'
+}">
+  <div
+    style="align-self: stretch; padding-top: 16px; padding-bottom: 16px; padding-left: 12px; padding-right: 20px; border-bottom: 1px #EAEDF2 solid; justify-content: flex-start; align-items: center; gap: 4px; display: inline-flex">
+    <button
+      routerLink="/dashboard"
+      style="flex: 1 1 0; height: 42px; padding-left: 8px; padding-right: 8px; padding-top: 4px; padding-bottom: 4px; border-radius: 10px; justify-content: flex-start; align-items: center; gap: 12px; display: flex; background-color: transparent; border: none; cursor: pointer;">
+
+      <app-app-icon></app-app-icon>
+      <div
+        style="color: #0F0F10; font-size: 24px; font-family: Aeonik; font-weight: 700; line-height: 20px; word-wrap: break-word">
+        Dyser
+      </div>
+    </button>
+  </div>
+
+  <div
+    style="align-self: stretch; flex: 1 1 0; padding-top: 20px; padding-bottom: 16px; padding-left: 20px; padding-right: 20px; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 20px; display: flex">
+    <button style="background: none; border: none; cursor: pointer; padding: 0;">
+      <div
+        style="width: 185px; padding: 12px; background: #F0EBFE; border-radius: 8px; border: 1px rgba(100, 56, 245, 0.10) solid; justify-content: center; align-items: center; gap: 4px; display: inline-flex">
+        <div
+          style="flex: 1 1 0; flex-direction: column; justify-content: center; align-items: center; gap: 4px; display: inline-flex">
+          <div
+            style="align-self: stretch; color: #323741; font-size: 14px; font-family: Inter; font-weight: 400; line-height: 20px; word-wrap: break-word">
+            Balance
+          </div>
+          <div
+            style="align-self: stretch; justify-content: flex-start; align-items: center; gap: 4px; display: inline-flex">
+            <div
+              style="color: #0F0F10; font-size: 18px; font-family: Inter; font-weight: 500; line-height: 24px; word-wrap: break-word">
+              $8,636.80
+            </div>
+          </div>
+        </div>
+        <button
+          onmouseout="this.style.backgroundColor='transparent'; this.style.boxShadow='none';"
+          onmouseover="this.style.backgroundColor='white'; this.style.boxShadow='0px 4px 8px rgba(0, 0, 0, 0.1)';this.style.opacity='0.7';"
+          style="width: 20px; height: 20px; padding: 0; border-radius: 50%;justify-content: center; align-items: center; display: flex; background-color: transparent; border: none; cursor: pointer; transition: background-color 0.3s, box-shadow 0.3s;">
+          <app-down-arrow-icon></app-down-arrow-icon>
+        </button>
+
+
+      </div>
+    </button>
+    <div
+      style="align-self: stretch; height: 346px; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 4px; display: flex">
+      <div
+        style="align-self: stretch; padding: 4px; justify-content: center; align-items: center; gap: 8px; display: inline-flex">
+        <div
+          style="flex: 1 1 0; color: #888E9E; font-size: 12px; font-family: Inter; font-weight: 500; line-height: 18px; word-wrap: break-word">
+          Main
+        </div>
+      </div>
+
+      <app-hover-side-bar [sidebarParams]="getSidebarMainParams()"></app-hover-side-bar>
+
+
+    </div>
+  </div>
+
+  <div
+    id="others"
+    style="align-self: stretch; flex: 1 1 0; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 6px; display: flex; margin-top: 40px;margin-left: 18px">
+    <div
+      style="align-self: stretch; padding: 4px; justify-content: center; align-items: center; gap: 8px; display: inline-flex">
+      <div
+        style="flex: 1 1 0; color: #888E9E; font-size: 12px; font-family: Inter; font-weight: 500; line-height: 18px; word-wrap: break-word">
+        Others
+      </div>
+    </div>
+
+    <app-hover-side-bar [sidebarParams]="getSidebarOthersParams()"></app-hover-side-bar>
+  </div>
+  <div
+    style="width: 248px; height: 78px; padding: 16px 20px 16px 12px; display: flex; align-items: center; gap: 4px; margin-left: -13px">
+    <div
+      style="flex: 1; height: 46px; padding: 4px 8px; border-radius: 10px; display: flex; align-items: center; gap: 4px">
+      <div style="padding: 2px 0; display: flex; align-items: center">
+        <img alt="avatar" src="https://i.postimg.cc/PJBQRgg3/Avatar.png">
+      </div>
+      <div style="flex: 1; padding: 0 4px; display: flex; flex-direction: column; align-items: flex-start">
+        <div style="display: flex; align-items: center; gap: 8px">
+          <div
+            style="color: #0F0F10; font-size: 14px; font-family: Inter, sans-serif; font-weight: 500; line-height: 20px;">
+            Pixem
+          </div>
+        </div>
+        <div
+          style="color: #888E9E; font-size: 12px; font-family: Inter, sans-serif; font-weight: 400; line-height: 18px;">
+          hipixem&#64;gmail.com
+        </div>
+      </div>
+    </div>
+    <app-three-dots></app-three-dots>
+  </div>
+
+</div>

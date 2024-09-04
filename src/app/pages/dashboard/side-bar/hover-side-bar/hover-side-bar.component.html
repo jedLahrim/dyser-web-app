@@ -1,0 +1,70 @@
+@for (sidebarParameter of sidebarParams; track $index) {
+  <div
+    (click)="goToOverview(sidebarParameter)"
+    onmouseout="this.style.backgroundColor='transparent'; this.style.boxShadow='none'; this.querySelector('.text').style.color='#323741'; this.querySelector('.arrow').style.display='none';"
+    onmouseover="this.style.backgroundColor='white'; this.style.boxShadow='0px 4px 12px rgba(0, 0, 0, 0.04)'; this.querySelector('.text').style.color='#0F0F10'; this.querySelector('.arrow').style.display='flex';"
+    style="width: 208px; padding-left: 12px; padding-right: 12px; padding-top: 8px; padding-bottom: 8px; border-radius: 8px; justify-content: flex-start; align-items: center; gap: 8px; display: inline-flex; transition: background-color 0.3s, color 0.3s; cursor: pointer;">
+    @if (sidebarParams.length >= 8) {
+      @if ($index == 0) {
+        <app-overview-icon></app-overview-icon>
+      }
+      @if ($index == 1) {
+        <app-balance-icon></app-balance-icon>
+      }
+      @if ($index == 2) {
+        <app-transaction-icon></app-transaction-icon>
+      }
+      @if ($index == 3) {
+        <app-customers-icon></app-customers-icon>
+      }
+      @if ($index == 4) {
+        <app-product-catalog-icon></app-product-catalog-icon>
+      }
+      @if ($index == 5) {
+        <app-reports-icon></app-reports-icon>
+      }
+      @if ($index == 6) {
+        <app-payments-icon></app-payments-icon>
+      }
+      @if ($index == 7) {
+        <app-invoice-icon></app-invoice-icon>
+      }
+      <div
+        style="flex: 1 1 0; height: 20px; justify-content: flex-start; align-items: center; gap: 6px; display: flex">
+        <div class="text"
+             style="color: #323741; font-size: 14px; font-family: Inter; font-weight: 500; line-height: 20px; word-wrap: break-word">
+          {{ sidebarParameter }}
+        </div>
+      </div>
+      <div class="arrow"
+           style="width: 16px; height: 16px; padding-left: 4.95px; padding-right: 4.95px; padding-top: 2.67px; padding-bottom: 2.67px; justify-content: center; align-items: center; display: none;">
+        <app-right-arrow-icon></app-right-arrow-icon>
+      </div>
+    } @else {
+      @if ($index == 0) {
+        <app-developers-icon></app-developers-icon>
+      }
+      @if ($index == 1) {
+        <app-affiliates-icon></app-affiliates-icon>
+      }
+      @if ($index == 2) {
+        <app-setup-icon></app-setup-icon>
+      }
+      @if ($index == 3) {
+        <app-design-icon></app-design-icon>
+      }
+      <div
+        style="flex: 1 1 0; height: 20px; justify-content: flex-start; align-items: center; gap: 6px; display: flex">
+        <div class="text"
+             style="color: #323741; font-size: 14px; font-family: Inter; font-weight: 500; line-height: 20px; word-wrap: break-word">
+          {{ sidebarParameter }}
+        </div>
+      </div>
+      <div class="arrow"
+           style="width: 16px; height: 16px; padding-left: 4.95px; padding-right: 4.95px; padding-top: 2.67px; padding-bottom: 2.67px; justify-content: center; align-items: center; display: none;">
+        <app-right-arrow-icon></app-right-arrow-icon>
+      </div>
+    }
+
+  </div>
+}

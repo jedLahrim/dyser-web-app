@@ -1,0 +1,54 @@
+
+button:hover div {
+  /*background: lightgray;*/
+  opacity: 89%;
+}
+
+.hover {
+  background-color: #ebebeb;
+  opacity: 90%;
+}
+
+.tab-container {
+  display: flex;
+  align-items: center;
+  background: #F8FAFB;
+  border-radius: 8px;
+  overflow: hidden;
+  padding: 4px;
+  width: 310px;
+  height: 27px;
+}
+
+.tabs {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.tabs div {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 30px;
+  cursor: pointer;
+  padding: 0 12px;
+  font-family: Inter, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  border-radius: 6px;
+}
+
+.selected {
+  background: #0F0F10;
+  color: white;
+  box-shadow: 0px 2px 4px rgba(27, 28, 29, 0.02);
+}
+
+.unselected {
+  background: transparent;
+  color: #555F75;
+}
+

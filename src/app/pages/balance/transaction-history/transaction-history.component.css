@@ -1,0 +1,172 @@
+button:hover div {
+  /*background: lightgray;*/
+  opacity: 89%;
+}
+
+.hover {
+  background-color: #ebebeb;
+  opacity: 90%;
+}
+
+
+.transaction-table {
+  /*width: 100%;*/
+  border-collapse: collapse;
+}
+
+.transaction-table th,
+.transaction-table td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #EAEDF2;
+}
+
+.transaction-table th {
+  width: 130px;
+  background-color: #F8FAFB;
+  font-weight: 400;
+  color: #323741;
+}
+
+.transaction-info {
+  display: flex;
+  align-items: center;
+}
+
+.transaction-info img {
+  width: 32px;
+  height: 32px;
+  margin-right: 12px;
+}
+
+.sub-text {
+  font-family: Inter;
+  font-size: 12px;
+  color: #323741;
+}
+
+.negative {
+  color: #DE2C41;
+}
+
+.status {
+  width: 103px;
+  height: 24px;
+  padding: 3px 8px 3px 4px;
+  border-radius: 4px;
+  overflow: hidden;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+}
+
+.status.onProgress {
+  width: 90%;
+  background-color: #FDF3E2; /* Existing background */
+  color: #B58330; /* Text color */
+}
+
+.status.completed {
+  background-color: #E1F4EF;
+  color: #29896E;
+  /*border: 1px solid #40C4AA;*/
+}
+
+.status::before {
+  /*content: '• '; !* Add a dot before the text *!*/
+  color: inherit; /* Optional: inherit the color from the parent */
+  font-size: 20px;
+}
+
+.status .dot {
+  width: 6px;
+  height: 6px;
+  background: #B58330;
+  border-radius: 9999px;
+}
+
+.transaction-table th,
+.transaction-table td {
+  position: relative;
+  padding-left: 30px; /* Adjust this value as needed */
+}
+
+.custom-checkbox {
+  position: absolute;
+  left: 8px; /* Adjust this value to fine-tune the position */
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+
+
+.custom-checkbox input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.checkmark {
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 16px;
+  width: 16px;
+  background: white; /* Default white background */
+  border-radius: 4px;
+  border: 1.5px solid #EAEDF2;
+  transition: background-color 0.3s ease;
+}
+
+.custom-checkbox input:checked + .checkmark {
+  cursor: pointer;
+  background: #007BFF; /* Blue background when checked */
+  border: none; /* Remove border when checked */
+}
+
+.custom-checkbox input:checked + .checkmark::after {
+  content: "";
+  position: absolute;
+  left: 5px;
+  top: 1px;
+  width: 4px;
+  height: 8px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+.custom-checkbox input:checked ~ .checkmark:after {
+  display: block;
+}
+
+.custom-checkbox .checkmark:after {
+  left: 5px;
+  top: 2px;
+  width: 3px;
+  height: 7px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+.negative {
+  color: red;
+}
+
+.status {
+  padding: 5px 10px;
+  border-radius: 15px;
+}
+
+.completed {
+  background-color: #E1F4EF;
+  color: #29896E;
+}
+
+.onProgress {
+  background-color: #FDF3E2;
+  color: #B58330;
+}
