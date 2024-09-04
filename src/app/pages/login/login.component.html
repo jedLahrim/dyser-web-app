@@ -2,7 +2,7 @@
   style="width: 1440px; height: 1024px; position: relative; background: white; border-radius: 16px; overflow: hidden">
   <app-welcome></app-welcome>
   <div
-    style="margin-top: -20px;left: 120px; top: 266px; position: absolute; flex-direction: column; justify-content: flex-start; align-items: center; gap: 40px; display: inline-flex">
+    style="margin-top: -45px;left: 120px; top: 266px; position: absolute; flex-direction: column; justify-content: flex-start; align-items: center; gap: 40px; display: inline-flex">
     <div style="flex-direction: column; justify-content: flex-start; align-items: center; gap: 6px; display: flex">
       <div
         style="color: #0F0F10; font-size: 32px; font-family: Inter; font-weight: 600; line-height: 42px; word-wrap: break-word">
@@ -17,10 +17,10 @@
       <div
         style="flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 24px; display: flex">
         <div style="justify-content: flex-start; align-items: flex-start; gap: 12px; display: inline-flex">
-          <button style="background: none; border: none; cursor: pointer; padding: 0;">
+          <button style="width: 230px;background: none; border: none; cursor: pointer; padding: 0;">
             <div
-              style="height: 40px; padding-left: 8px; padding-right: 8px; padding-top: 10px; padding-bottom: 10px; background: white; border-radius: 8px; overflow: hidden; border: 1px #EAEDF2 solid; justify-content: center; align-items: center; gap: 4px; display: flex">
-              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+              style="height: 22px; padding-left: 8px; padding-right: 8px; padding-top: 10px; padding-bottom: 10px; background: white; border-radius: 8px; overflow: hidden; border: 1px #EAEDF2 solid; justify-content: center; align-items: center; gap: 4px; display: flex">
+              <svg fill="none" height="20" viewBox="0 0 20 20" width="20" xmlns="http://www.w3.org/2000/svg">
                 <path
                   d="M10.1533 8.63672V11.5413H14.2721C14.0912 12.4754 13.5485 13.2663 12.7345 13.7981L15.2182 15.6868C16.6654 14.3777 17.5003 12.455 17.5003 10.1709C17.5003 9.63908 17.4516 9.12767 17.3611 8.6368L10.1533 8.63672Z"
                   fill="#4285F4" />
@@ -44,10 +44,10 @@
             </div>
           </button>
 
-          <button style="background: none; border: none; cursor: pointer; padding: 0;">
+          <button style="width: 230px;background: none; border: none; cursor: pointer; padding: 0;">
             <div
-              style="height: 40px; padding-left: 8px; padding-right: 8px; padding-top: 10px; padding-bottom: 10px; background: white; border-radius: 8px; overflow: hidden; border: 1px #EAEDF2 solid; justify-content: center; align-items: center; gap: 4px; display: flex">
-              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+              style="height: 22px; padding-left: 8px; padding-right: 8px; padding-top: 10px; padding-bottom: 10px; background: white; border-radius: 8px; overflow: hidden; border: 1px #EAEDF2 solid; justify-content: center; align-items: center; gap: 4px; display: flex">
+              <svg fill="none" height="20" viewBox="0 0 20 20" width="20" xmlns="http://www.w3.org/2000/svg">
                 <path
                   d="M14.0921 10.0525C14.1132 12.3225 16.0835 13.0779 16.1053 13.0875C16.0887 13.1408 15.7905 14.164 15.0673 15.2209C14.4421 16.1347 13.7932 17.0451 12.7711 17.064C11.7667 17.0825 11.4437 16.4684 10.2954 16.4684C9.14751 16.4684 8.78868 17.0451 7.83793 17.0825C6.85129 17.1199 6.09994 16.0944 5.46958 15.184C4.18145 13.3217 3.19706 9.92158 4.51885 7.62645C5.17549 6.48669 6.34895 5.76494 7.62264 5.74643C8.5915 5.72795 9.50596 6.39824 10.0983 6.39824C10.6902 6.39824 11.8015 5.59215 12.9697 5.71054C13.4588 5.73089 14.8317 5.9081 15.7132 7.19844C15.6422 7.24248 14.0751 8.15474 14.0921 10.0525V10.0525ZM12.2045 4.47847C12.7283 3.84441 13.0809 2.96174 12.9847 2.0835C12.2297 2.11384 11.3167 2.58663 10.7751 3.22034C10.2897 3.78152 9.86468 4.67973 9.97937 5.54059C10.8209 5.6057 11.6807 5.11293 12.2045 4.47847Z"
                   fill="black" />
@@ -63,123 +63,151 @@
           </button>
         </div>
         <div style="justify-content: flex-start; align-items: center; gap: 6px; display: inline-flex">
-          <div style="width: 209px; height: 1px; background: #EAEDF2"></div>
+          <div style="width: 220px; height: 1px; background: #EAEDF2"></div>
           <div
             style="color: #888E9E; font-size: 14px; font-family: Inter; font-weight: 400; line-height: 20px; word-wrap: break-word">
             OR
           </div>
-          <div style="width: 208px; height: 1px; background: #EAEDF2"></div>
+          <div style="width: 220px; height: 1px; background: #EAEDF2"></div>
         </div>
       </div>
-      <div
-        style="flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 16px; display: flex">
+      <form (ngSubmit)="onSubmittedAll()" [formGroup]="signInForm">
         <div
-          style="height: 64px; flex-direction: column; justify-content: flex-start; align-items: center; gap: 4px; display: flex">
+          style="flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 16px; display: flex;">
+
+          <!-- Email Field -->
           <div
-            style="align-self: stretch; justify-content: flex-start; align-items: center; gap: 1px; display: inline-flex">
+            style="height: 64px; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 4px; display: flex;">
+
+            <label
+              style="align-self: stretch; display: flex; gap: 1px; color: #0F0F10; font-size: 14px; font-family: Inter; font-weight: 500; line-height: 20px;">
+              Email<span
+
+              style="color: #DE2C41; font-size: 12px; font-family: Inter; font-weight: 500; line-height: 18px;">*</span>
+            </label>
             <div
-              style="color: #0F0F10; font-size: 14px; font-family: Inter; font-weight: 500; line-height: 20px; word-wrap: break-word">
-              Email
-            </div>
-            <div
-              style="color: #DE2C41; font-size: 12px; font-family: Inter; font-weight: 500; line-height: 18px; word-wrap: break-word">
-              *
+              [ngStyle]="{'border': emailBorder}"
+              style="width: 449px; align-self: stretch; padding: 10px 12px; background: white; border-radius: 8px; overflow: hidden; border: 1px #EAEDF2 solid; display: flex; align-items: center; gap: 8px;">
+              <svg fill="none" height="20" viewBox="0 0 20 20" width="20" xmlns="http://www.w3.org/2000/svg">
+                <path d="M1.66675 5L7.4276 8.26414C9.55141 9.46751 10.4488 9.46751 12.5726 8.26414L18.3334 5"
+                      stroke="#555F75" stroke-linejoin="round" stroke-width="1.5" />
+                <path
+                  d="M1.67989 11.2295C1.73437 13.7841 1.76161 15.0614 2.70421 16.0076C3.64682 16.9538 4.95869 16.9868 7.58244 17.0527C9.19951 17.0933 10.8007 17.0933 12.4177 17.0527C15.0415 16.9868 16.3533 16.9538 17.296 16.0076C18.2386 15.0614 18.2658 13.7841 18.3203 11.2295C18.3378 10.4081 18.3378 9.59157 18.3203 8.77017C18.2658 6.21555 18.2386 4.93825 17.296 3.99206C16.3534 3.04586 15.0415 3.0129 12.4177 2.94698C10.8007 2.90635 9.1995 2.90635 7.58243 2.94697C4.95869 3.01289 3.64682 3.04585 2.70421 3.99204C1.7616 4.93824 1.73436 6.21554 1.67989 8.77015C1.66237 9.59156 1.66237 10.4081 1.67989 11.2295Z"
+                  stroke="#555F75" stroke-linejoin="round" stroke-width="1.5" />
+              </svg>
+
+              <input
+                (blur)="onBlur('email')"
+                (focus)="onFocus('email')"
+                formControlName="email"
+                id="emailInput"
+                placeholder="{{ emailPlaceholder }}"
+                style="flex: 1 1 0; border: none; outline: none; font-size: 14px; color: #888E9E;"
+                type="email">
             </div>
           </div>
+          <div *ngIf="emailError"
+               style="display: flex; align-items: center; color: #DE2C41; font-size: 12px; font-family: Inter; font-weight: 500; line-height: 18px;">
+            <svg fill="none" height="16" style="margin-right: 4px; position: relative; top: -1px;" viewBox="0 0 16 16" width="16"
+                 xmlns="http://www.w3.org/2000/svg">
+              <path clip-rule="evenodd" d="M0.833252 8.00016C0.833252 11.9582 4.04188 15.1668 7.99992 15.1668C11.958 15.1668 15.1666 11.9582 15.1666 8.00016C15.1666 4.04212 11.958 0.833496 7.99992 0.833496C4.04188 0.833496 0.833252 4.04212 0.833252 8.00016ZM7.78784 7.35167C7.95254 7.37381 8.18036 7.43308 8.37369 7.62641C8.56702 7.81974 8.62629 8.04757 8.64844 8.21226C8.66678 8.3487 8.66668 8.50735 8.6666 8.6406L8.66658 8.66685V11.3335C8.66658 11.7017 8.36811 12.0002 7.99992 12.0002C7.63173 12.0002 7.33325 11.7017 7.33325 11.3335V8.66685C6.96506 8.66685 6.66658 8.36838 6.66658 8.00019C6.66658 7.632 6.96506 7.33352 7.33325 7.33352L7.35951 7.33351C7.49276 7.33342 7.6514 7.33332 7.78784 7.35167ZM7.99688 4.66683C7.63034 4.66683 7.33319 4.96531 7.33319 5.3335C7.33319 5.70169 7.63034 6.00016 7.99688 6.00016H8.00284C8.36939 6.00016 8.66653 5.70169 8.66653 5.3335C8.66653 4.96531 8.36939 4.66683 8.00284 4.66683H7.99688Z"
+                    fill="#DE2C41"
+                    fill-rule="evenodd" />
+            </svg>
+            {{ emailError }}
+          </div>
+          <!-- Password Field -->
           <div
-            style="align-self: stretch; padding-top: 10px; padding-bottom: 10px; padding-left: 12px; padding-right: 10px; background: white; border-radius: 8px; overflow: hidden; border: 1px #EAEDF2 solid; justify-content: flex-start; align-items: center; gap: 8px; display: inline-flex">
-            <div style="width: 20px; height: 20px; justify-content: center; align-items: center; display: flex">
-              <div
-                style="width: 20px; height: 20px; padding-left: 1.67px; padding-right: 1.67px; padding-top: 2.92px; padding-bottom: 2.92px; justify-content: center; align-items: center; display: inline-flex">
-                <div style="width: 16.67px; height: 14.17px; position: relative">
-                  <div
-                    style="width: 16.67px; height: 4.17px; left: 0px; top: 2.08px; position: absolute; border: 1.50px #888E9E solid"></div>
-                  <div
-                    style="width: 16.67px; height: 14.17px; left: 0px; top: 0px; position: absolute; border-radius: 4px; border: 1.50px #888E9E solid"></div>
+            style="height: 88px; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 4px; display: flex;">
+            <label
+              style="align-self: stretch; display: flex; gap: 1px; color: #0F0F10; font-size: 14px; font-family: Inter; font-weight: 500; line-height: 20px;">
+              Password<span
+              style="color: #DE2C41; font-size: 12px; font-family: Inter; font-weight: 500; line-height: 18px;">*</span>
+            </label>
+            <div
+              [ngStyle]="{'border': passwordBorder}"
+              style="width: 449px; align-self: stretch; padding: 10px 12px; background: white; border-radius: 8px; overflow: hidden; border: 1px #EAEDF2 solid; display: flex; align-items: center; gap: 8px;">
+              <svg fill="none" height="20" viewBox="0 0 20 20" width="20" xmlns="http://www.w3.org/2000/svg">
+                <path d="M10 13.7497V12.083" stroke="#888E9E" stroke-linecap="round" stroke-width="1.5" />
+                <path
+                  d="M3.55643 15.704C3.74383 17.0958 4.89669 18.1863 6.29963 18.2508C7.48015 18.305 8.67934 18.3333 9.99992 18.3333C11.3205 18.3333 12.5197 18.305 13.7002 18.2508C15.1031 18.1863 16.256 17.0958 16.4434 15.704C16.5657 14.7956 16.6666 13.8647 16.6666 12.9167C16.6666 11.9686 16.5657 11.0378 16.4434 10.1294C16.256 8.73752 15.1031 7.64707 13.7002 7.58258C12.5197 7.52831 11.3205 7.5 9.99992 7.5C8.67934 7.5 7.48015 7.52831 6.29963 7.58258C4.89669 7.64707 3.74383 8.73752 3.55643 10.1294C3.43412 11.0378 3.33325 11.9686 3.33325 12.9167C3.33325 13.8647 3.43412 14.7956 3.55643 15.704Z"
+                  stroke="#888E9E" stroke-width="1.5" />
+                <path
+                  d="M6.25 7.49984V5.4165C6.25 3.34544 7.92893 1.6665 10 1.6665C12.0711 1.6665 13.75 3.34544 13.75 5.4165V7.49984"
+                  stroke="#888E9E" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" />
+              </svg>
+
+              <input
+                (blur)="onBlur('password')"
+                (focus)="onFocus('password')"
+                [type]="passwordInputType"
+                formControlName="password"
+                id="passwordInput"
+                placeholder="{{ passwordPlaceholder }}"
+                style="flex: 1 1 0; border: none; outline: none; font-size: 14px; color: #888E9E;">
+              <button (click)="showPassword()" style="background: none; border: none; cursor: pointer; padding: 0;"
+                      type="button">
+                <svg fill="none" height="20" viewBox="0 0 20 20" width="20" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M17.9536 9.20399C18.207 9.55926 18.3337 9.73689 18.3337 9.99984C18.3337 10.2628 18.207 10.4404 17.9536 10.7957C16.8152 12.392 13.908 15.8332 10.0003 15.8332C6.09264 15.8332 3.18541 12.392 2.04703 10.7957C1.79367 10.4404 1.66699 10.2628 1.66699 9.99984C1.66699 9.73689 1.79367 9.55926 2.04703 9.20399C3.18541 7.60771 6.09264 4.1665 10.0003 4.1665C13.908 4.1665 16.8152 7.6077 17.9536 9.20399Z"
+                    stroke="#888E9E" stroke-width="1.5" />
+                  <path
+                    d="M12.5 10C12.5 8.61929 11.3807 7.5 10 7.5C8.61929 7.5 7.5 8.61929 7.5 10C7.5 11.3807 8.61929 12.5 10 12.5C11.3807 12.5 12.5 11.3807 12.5 10Z"
+                    stroke="#888E9E" stroke-width="1.5" />
+
+                  <!-- Conditional line to cross the eye -->
+                  <path *ngIf="isPasswordShowed" d="M4 4L16 16" stroke="#888E9E" stroke-width="1.5" />
+                </svg>
+              </button>
+            </div>
+          </div>
+          <div style="margin-top: -17px">
+            <div *ngIf="passwordError"
+                 style="margin-bottom: -20px;display: flex; align-items: center; color: #DE2C41; font-size: 12px; font-family: Inter; font-weight: 500; line-height: 18px;">
+              <svg fill="none" height="16" style="margin-right: 4px; position: relative; top: -1px;" viewBox="0 0 16 16" width="16"
+                   xmlns="http://www.w3.org/2000/svg">
+                <path clip-rule="evenodd" d="M0.833252 8.00016C0.833252 11.9582 4.04188 15.1668 7.99992 15.1668C11.958 15.1668 15.1666 11.9582 15.1666 8.00016C15.1666 4.04212 11.958 0.833496 7.99992 0.833496C4.04188 0.833496 0.833252 4.04212 0.833252 8.00016ZM7.78784 7.35167C7.95254 7.37381 8.18036 7.43308 8.37369 7.62641C8.56702 7.81974 8.62629 8.04757 8.64844 8.21226C8.66678 8.3487 8.66668 8.50735 8.6666 8.6406L8.66658 8.66685V11.3335C8.66658 11.7017 8.36811 12.0002 7.99992 12.0002C7.63173 12.0002 7.33325 11.7017 7.33325 11.3335V8.66685C6.96506 8.66685 6.66658 8.36838 6.66658 8.00019C6.66658 7.632 6.96506 7.33352 7.33325 7.33352L7.35951 7.33351C7.49276 7.33342 7.6514 7.33332 7.78784 7.35167ZM7.99688 4.66683C7.63034 4.66683 7.33319 4.96531 7.33319 5.3335C7.33319 5.70169 7.63034 6.00016 7.99688 6.00016H8.00284C8.36939 6.00016 8.66653 5.70169 8.66653 5.3335C8.66653 4.96531 8.36939 4.66683 8.00284 4.66683H7.99688Z"
+                      fill="#DE2C41"
+                      fill-rule="evenodd" />
+              </svg>
+              {{ passwordError }}
+            </div>
+            <div style="margin-left: 380px">
+              <button style="background: none; border: none; cursor: pointer; padding: 0;">
+                <div
+                  style=";text-align: right; color: #6438F5; font-size: 12px; font-family: Inter; line-height: 16px;">
+                  Forget Password
                 </div>
-              </div>
-            </div>
-            <div
-              style="flex: 1 1 0; color: #888E9E; font-size: 14px; font-family: Inter; font-weight: 400; line-height: 20px; word-wrap: break-word">
-              Enter your email
+              </button>
             </div>
           </div>
+
         </div>
         <div
-          style="height: 88px; flex-direction: column; justify-content: flex-start; align-items: center; gap: 4px; display: flex">
-          <div
-            style="align-self: stretch; justify-content: flex-start; align-items: center; gap: 1px; display: inline-flex">
+          style="margin-top: 5px;flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 24px; display: flex">
+          <button style="background: none; border: none; cursor: pointer; padding: 0;" type="submit">
             <div
-              style="color: #0F0F10; font-size: 14px; font-family: Inter; font-weight: 500; line-height: 20px; word-wrap: break-word">
-              Password
-            </div>
-            <div
-              style="color: #DE2C41; font-size: 12px; font-family: Inter; font-weight: 500; line-height: 18px; word-wrap: break-word">
-              *
-            </div>
-          </div>
-          <div
-            style="align-self: stretch; padding-top: 10px; padding-bottom: 10px; padding-left: 12px; padding-right: 10px; background: white; box-shadow: 0px 1px 1px rgba(234, 237, 242, 0.30); border-radius: 8px; overflow: hidden; border: 1px #EAEDF2 solid; justify-content: flex-start; align-items: center; gap: 8px; display: inline-flex">
-            <div style="width: 20px; height: 20px; justify-content: center; align-items: center; display: flex">
+              style="width: 449px; padding-left: 8px; padding-right: 8px; padding-top: 10px; padding-bottom: 10px; background: linear-gradient(0deg, #0F0F10 0%, #0F0F10 100%), linear-gradient(180deg, rgba(255, 255, 255, 0.18) 0%, rgba(255, 255, 255, 0) 100%); box-shadow: 0px 0px 0px 1px #242628; border-radius: 8px; overflow: hidden; border: 1px rgba(255, 255, 255, 0.12) solid; justify-content: center; align-items: center; gap: 4px; display: inline-flex">
               <div
-                style="width: 20px; height: 20px; padding-left: 3.33px; padding-right: 3.33px; padding-top: 1.67px; padding-bottom: 1.67px; justify-content: center; align-items: center; display: inline-flex">
-                <div style="width: 13.33px; height: 16.67px; position: relative">
-                  <div
-                    style="width: 0px; height: 1.67px; left: 6.67px; top: 10.42px; position: absolute; border: 1.50px #888E9E solid"></div>
-                  <div
-                    style="width: 13.33px; height: 10.83px; left: 0px; top: 5.83px; position: absolute; border: 1.50px #888E9E solid"></div>
-                  <div
-                    style="width: 7.50px; height: 5.83px; left: 2.92px; top: 0px; position: absolute; border-radius: 9px; border: 1.50px #888E9E solid"></div>
+                style="padding-left: 4px; padding-right: 4px; justify-content: center; align-items: center; gap: 8px; display: flex">
+                <div
+                  style="text-align: center; color: white; font-size: 14px; font-family: Inter; font-weight: 500; line-height: 20px; word-wrap: break-word">
+                  Sign In
                 </div>
               </div>
-            </div>
-            <div
-              style="flex: 1 1 0; color: #888E9E; font-size: 14px; font-family: Inter; font-weight: 400; line-height: 20px; word-wrap: break-word">
-              Enter your password
-            </div>
-            <div
-              style="width: 20px; height: 20px; padding-left: 1.67px; padding-right: 1.67px; padding-top: 4.17px; padding-bottom: 4.17px; justify-content: center; align-items: center; display: flex">
-              <div style="width: 16.67px; height: 11.67px; position: relative">
-                <div
-                  style="width: 16.67px; height: 11.67px; left: 0px; top: 0px; position: absolute; border: 1.50px #888E9E solid"></div>
-                <div
-                  style="width: 5px; height: 5px; left: 5.83px; top: 8.33px; position: absolute; border: 1.50px #888E9E solid"></div>
-              </div>
-            </div>
-          </div>
-          <div
-            style="align-self: stretch; padding-top: 2px; padding-bottom: 2px; justify-content: flex-start; align-items: flex-start; gap: 4px; display: inline-flex">
-            <div
-              style="flex: 1 1 0; text-align: right; color: #6438F5; font-size: 12px; font-family: Inter; font-weight: 400; line-height: 16px; word-wrap: break-word">
-              Forget Password
-            </div>
-          </div>
-        </div>
-      </div>
-      <div
-        style="flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 24px; display: flex">
-        <button style="background: none; border: none; cursor: pointer; padding: 0;">
-          <div
-            style="width: 449px; padding-left: 8px; padding-right: 8px; padding-top: 10px; padding-bottom: 10px; background: linear-gradient(0deg, #0F0F10 0%, #0F0F10 100%), linear-gradient(180deg, rgba(255, 255, 255, 0.18) 0%, rgba(255, 255, 255, 0) 100%); box-shadow: 0px 0px 0px 1px #242628; border-radius: 8px; overflow: hidden; border: 1px rgba(255, 255, 255, 0.12) solid; justify-content: center; align-items: center; gap: 4px; display: inline-flex">
-            <div
-              style="padding-left: 4px; padding-right: 4px; justify-content: center; align-items: center; gap: 8px; display: flex">
-              <div
-                style="text-align: center; color: white; font-size: 14px; font-family: Inter; font-weight: 500; line-height: 20px; word-wrap: break-word">
-                Sign In
-              </div>
-            </div>
-          </div>
-        </button>
-        <div style="width: 449px"><span
-          style="color: #888E9E; font-size: 14px; font-family: Inter; font-weight: 400; line-height: 20px; word-wrap: break-word">Don’t have an account?  </span>
-          <button style="background: none; border: none; cursor: pointer; padding: 0;">
-            <div
-              style="color: #6438F5; font-size: 14px; font-family: Inter; font-weight: 500; line-height: 20px; word-wrap: break-word">
-              Create an account
             </div>
           </button>
+          <div style="width: 449px"><span
+            style="color: #888E9E; font-size: 14px; font-family: Inter; font-weight: 400; line-height: 20px; word-wrap: break-word">Don’t have an account?  </span>
+            <button style="background: none; border: none; cursor: pointer; padding: 0;">
+              <div
+                style="color: #6438F5; font-size: 14px; font-family: Inter; font-weight: 500; line-height: 20px; word-wrap: break-word">
+                Create an account
+              </div>
+            </button>
+          </div>
         </div>
-      </div>
+      </form>
     </div>
   </div>
   <div

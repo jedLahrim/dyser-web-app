@@ -7,7 +7,7 @@ import { authRoutes } from './routes/auth.routes';
 export const routes: Routes = [
   {
     path: '',
-    redirectTo: '/dashboard',
+    redirectTo: '/signin',
     pathMatch: 'full',
   },
   {
