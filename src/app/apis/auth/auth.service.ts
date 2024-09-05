@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Auth } from './models/auth.model';
 import { Observable, tap } from 'rxjs';
 import { User } from './models/user.model';
-import { omit } from 'lodash';
+import { omit } from 'lodash-es';
 
 @Injectable({
   providedIn: 'root',
