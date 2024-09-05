@@ -192,8 +192,9 @@
                 (blur)="this.validateAuthService.onBlur('password')"
                 (focus)="this.validateAuthService.onFocus('password')"
                 [type]="this.validateAuthService.passwordInputType"
-                autocomplete="new password"
+                autocomplete="new-password"
                 formControlName="password"
+                name="password"
                 id="passwordInput"
                 placeholder="{{ this.validateAuthService.passwordPlaceholder }}"
                 style="flex: 1 1 0; border: none; outline: none; font-size: 14px; color: #888E9E;">
