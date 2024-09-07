@@ -41,6 +41,7 @@ export class LoginComponent {
   }
 
   navigateToAccount() {
+    this.validateAuthService._resetErrors();
     this.isLoginForm ? this.validateAuthService.router.navigate(['/signup']) : this.validateAuthService.router.navigate(['/signin']);
   }
 

@@ -128,11 +128,18 @@ export class ValidateAuthService {
     }
   }
 
+  _resetErrors() {
+    this.emailError = '';
+    this.passwordError = '';
+    this.fullNameError = '';
+  }
+
   private validateCredentials(isLoginForm: boolean) {
     this.formInvalid = true;
-    this.validateEmailPassword();
 
-    if (!isLoginForm) {
+    if (isLoginForm) {
+      this.validateEmailPassword();
+    } else {
       this.validateEmailPassword();
       if (this.fullNameErrors) {
         this.fullNameError = this.fullNameErrors;
@@ -144,9 +151,7 @@ export class ValidateAuthService {
 
   private async successAuth() {
     this.formInvalid = false;
-    this.emailError = '';
-    this.passwordError = '';
-    this.fullNameError = '';
+    this._resetErrors();
     await this.router.navigate(['/dashboard']);
   }
 

@@ -72,7 +72,11 @@
       <thead>
       <tr>
         <th style="font-family: Inter; font-weight: lighter; position: relative">
-          <app-checkbox (checkboxChange)="this.isChecked = $event" [marginTop]="'2px'"></app-checkbox>
+          <app-checkbox
+            (checkboxChange)="paginationService.checkAllRows($event)"
+            [isChecked]="paginationService.checked()"
+            [marginTop]="'2px'">
+          </app-checkbox>
           Invoice
         </th>
         <th style="font-family: Inter; font-weight: lighter;">Transactions</th>
@@ -86,7 +90,10 @@
       <tbody>
       <tr *ngFor="let transaction of paginationService.paginatedData; let i = index">
         <td style="font-family: Inter; white-space: nowrap; position: relative;">
-          <app-checkbox [isChecked]="isChecked" [marginTop]="'2px'"></app-checkbox>
+          <app-checkbox
+            (checkboxChange)="paginationService.onCheckboxChange($event, i)"
+            [isChecked]="transaction.checked" [marginTop]="'2px'">
+          </app-checkbox>
           {{ transaction.invoice }}
         </td>
         <td style="font-family: Inter; white-space: nowrap">

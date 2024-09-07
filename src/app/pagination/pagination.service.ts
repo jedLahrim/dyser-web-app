@@ -45,4 +45,19 @@ export class PaginationService {
     this.currentPage = page;
     this.updatePagination();
   }
+
+  checkAllRows(isChecked: boolean) {
+    this.paginatedData.forEach(customer => {
+      customer.checked = isChecked;
+    });
+  }
+
+  checked() {
+    return this.data.every(customer => customer.checked);
+  }
+
+  onCheckboxChange(isChecked: boolean, index: number) {
+    const globalIndex = (this.currentPage - 1) * this.pageSize + index;
+    this.data[globalIndex].checked = isChecked;
+  }
 }

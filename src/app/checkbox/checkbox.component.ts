@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { booleanAttribute, Component, EventEmitter, Input, Output } from '@angular/core';
 import { NgStyle } from '@angular/common';
 
 @Component({
@@ -9,7 +9,7 @@ import { NgStyle } from '@angular/common';
   styleUrl: './checkbox.component.css',
 })
 export class CheckboxComponent {
-  @Input() isChecked: boolean = false;
+  @Input({ transform: booleanAttribute }) isChecked: boolean = false;
   @Input() marginTop: string = '0px';
   @Output() checkboxChange = new EventEmitter<boolean>();
 

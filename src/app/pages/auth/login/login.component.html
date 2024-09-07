@@ -194,8 +194,8 @@
                 [type]="this.validateAuthService.passwordInputType"
                 autocomplete="new-password"
                 formControlName="password"
-                name="password"
                 id="passwordInput"
+                name="password"
                 placeholder="{{ this.validateAuthService.passwordPlaceholder }}"
                 style="flex: 1 1 0; border: none; outline: none; font-size: 14px; color: #888E9E;">
               <button (click)="this.validateAuthService.showPassword()"
@@ -279,7 +279,7 @@
                @if (isLoginForm) {
                  Don’t have an account?
                } @else {
-                 Already have a Account?
+                 Already have an Account?
                }
               </span>
             <button (click)="navigateToAccount()" style="background: none; border: none; cursor: pointer; padding: 0;"
@@ -306,7 +306,7 @@
       @if (isLoginForm) {
         Don’t have an account?
       } @else {
-        Already have a Account?
+        Already have an Account?
       }
     </div>
     <button (click)="navigateToAccount()"
