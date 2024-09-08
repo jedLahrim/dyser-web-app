@@ -45,9 +45,11 @@ export class LoginComponent {
     this.isLoginForm ? this.validateAuthService.router.navigate(['/signup']) : this.validateAuthService.router.navigate(['/signin']);
   }
 
-  agreeToTerms() {
+  agreeToTerms($event: any) {
+    // this.isChecked = $event;
     this.isChecked = !this.isChecked;
     this.checkboxRef.isChecked = this.isChecked;
+    this.validateAuthService.termsAgreed = true;
   }
 
 }

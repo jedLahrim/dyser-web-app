@@ -13,6 +13,7 @@ export class ValidateAuthService {
   signUpForm: FormGroup;
   emailError!: string;
   passwordError!: string;
+  termsAndPrivacyAgreementError!: string;
   fullNameError!: string;
   formInvalid = false;
   emailPlaceholder = 'Enter your email';
@@ -24,6 +25,7 @@ export class ValidateAuthService {
   passwordInputType = 'password';
   isPasswordShowed: boolean = false;
   _isLoginForm!: boolean;
+  termsAgreed: boolean = false;
 
   constructor(private fb: FormBuilder, public router: Router, public authService: AuthService) {
     this.signInForm = Constant.SIGNING_FORM(this.fb);
@@ -116,6 +118,11 @@ export class ValidateAuthService {
         this.validateCredentials(true);
       }
     } else {
+      if (!this.termsAgreed) {
+        this.termsAndPrivacyAgreementError = 'Please agree to the Terms & Privacy to proceed.2';
+      } else {
+        this.termsAndPrivacyAgreementError = '';
+      }
       if (this.authForm.valid) {
         setTimeout(async () => {
           await this.successAuth();
@@ -132,6 +139,7 @@ export class ValidateAuthService {
     this.emailError = '';
     this.passwordError = '';
     this.fullNameError = '';
+    this.termsAndPrivacyAgreementError = '';
   }
 
   private validateCredentials(isLoginForm: boolean) {
