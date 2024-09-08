@@ -174,6 +174,7 @@ export class ValidateAuthService {
       setTimeout(async () => {
         await this.successAuth();
         this.isLoading = false;
+        this.termsAgreed = false;
       }, 1000);
     } else {
       this.isLoading = false;
