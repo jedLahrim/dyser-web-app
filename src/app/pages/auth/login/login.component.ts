@@ -49,7 +49,7 @@ export class LoginComponent {
     // this.isChecked = $event;
     this.isChecked = !this.isChecked;
     this.checkboxRef.isChecked = this.isChecked;
-    this.validateAuthService.termsAgreed = true;
+    this.validateAuthService.termsAgreed = !this.validateAuthService.termsAgreed;
   }
 
 }

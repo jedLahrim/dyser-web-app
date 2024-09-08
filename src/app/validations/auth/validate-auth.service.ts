@@ -106,32 +106,10 @@ export class ValidateAuthService {
   async onSubmittedAll(): Promise<void> {
     this.isLoading = true;
     if (this._isLoginForm) {
-      if (this.authForm.valid) {
+      this._handleLogin();
 
-        //   todo call login api
-        setTimeout(async () => {
-          await this.successAuth();
-          this.isLoading = false;
-        }, 1000);
-      } else {
-        this.isLoading = false;
-        this.validateCredentials(true);
-      }
     } else {
-      if (!this.termsAgreed) {
-        this.termsAndPrivacyAgreementError = 'Please agree to the Terms & Privacy to proceed.2';
-      } else {
-        this.termsAndPrivacyAgreementError = '';
-      }
-      if (this.authForm.valid) {
-        setTimeout(async () => {
-          await this.successAuth();
-          this.isLoading = false;
-        }, 1000);
-      } else {
-        this.isLoading = false;
-        this.validateCredentials(false);
-      }
+      this._handleRegister();
     }
   }
 
@@ -148,6 +126,7 @@ export class ValidateAuthService {
     if (isLoginForm) {
       this.validateEmailPassword();
     } else {
+      this.validateTerms();
       this.validateEmailPassword();
       if (this.fullNameErrors) {
         this.fullNameError = this.fullNameErrors;
@@ -173,6 +152,40 @@ export class ValidateAuthService {
       this.passwordError = this.passwordErrors;
     } else {
       this.passwordError = '';
+    }
+  }
+
+  private _handleLogin() {
+    if (this.authForm.valid) {
+
+      //   todo call login api
+      setTimeout(async () => {
+        await this.successAuth();
+        this.isLoading = false;
+      }, 1000);
+    } else {
+      this.isLoading = false;
+      this.validateCredentials(true);
+    }
+  }
+
+  private _handleRegister() {
+    if (this.authForm.valid && this.termsAgreed) {
+      setTimeout(async () => {
+        await this.successAuth();
+        this.isLoading = false;
+      }, 1000);
+    } else {
+      this.isLoading = false;
+      this.validateCredentials(false);
+    }
+  }
+
+  private validateTerms() {
+    if (!this.termsAgreed) {
+      this.termsAndPrivacyAgreementError = 'Please agree to the Terms & Privacy to proceed';
+    } else {
+      this.termsAndPrivacyAgreementError = '';
     }
   }
 }
