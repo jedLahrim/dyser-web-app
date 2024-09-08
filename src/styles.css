@@ -29,6 +29,6 @@ body {
   font-family: Roboto, "Helvetica Neue", sans-serif;
 }
 
-§ {
+svg:hover {
   opacity: 0.89;
 }
