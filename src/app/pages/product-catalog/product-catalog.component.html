@@ -29,16 +29,16 @@
     </button>
   </div>
   <div
-    style="padding: 16px; left: 280px; top: 342px; position: absolute; background: white; border-radius: 10px; overflow: hidden; border: 1px #EAEDF2 solid; justify-content: center; align-items: center; display: inline-flex">
+    style="width: 1118px;padding: 16px; left: 280px; top: 380px; position: absolute; background: white; border-radius: 10px; overflow: hidden; border: 1px #EAEDF2 solid; justify-content: center; align-items: center; display: inline-flex">
     <div
-      style="align-self: stretch; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 24px; display: inline-flex">
+      style="margin-left: 330px;align-self: stretch; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 24px; display: inline-flex">
       <div style="align-self: stretch; justify-content: space-between; align-items: flex-start; display: inline-flex">
         <div class="tab-container">
           <div class="tabs">
             <div (click)="selectTab(tab.label)"
                  *ngFor="let tab of tabs"
                  [ngClass]="{'selected': selectedTab === tab.label, 'unselected': selectedTab !== tab.label}">
-              <div [style]="{'white-space': 'nowrap','margin-left':tab.label=='Pricing'? '-14px':''}">{{ tab.label }}
+              <div [style]="{'white-space': 'nowrap','margin-left':tab.label=='Pricing'? '2px':''}">{{ tab.label }}
               </div>
             </div>
           </div>
@@ -301,40 +301,32 @@
     </div>
   </div>
   <div
-    style="height: 156px; padding: 16px; left: 280px; top: 162px; position: absolute; background: white; box-shadow: 0px 4px 10px #F8FAFB; border-radius: 8px; border: 1px #EAEDF2 solid; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 16px; display: inline-flex">
-    <div style="flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 24px; display: flex">
+    style="width: 520px;height: 156px; padding: 16px; left: 280px; top: 162px; position: absolute; background: white; box-shadow: 0px 4px 10px #F8FAFB; border-radius: 8px; border: 1px #EAEDF2 solid; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 16px; display: inline-flex">
+    <div
+      style="width: 520px;flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 24px; display: flex">
       <div style="justify-content: flex-start; align-items: flex-start; gap: 81px; display: inline-flex">
         <div style="justify-content: flex-start; align-items: flex-start; gap: 8px; display: flex">
-          <div
-            style="width: 20px; height: 20px; padding: 1.67px; justify-content: center; align-items: center; display: flex">
-            <div style="width: 16.67px; height: 16.67px; position: relative">
-              <div
-                style="width: 0px; height: 3.33px; left: 1.67px; top: 10.83px; position: absolute; border: 1.50px #555F75 solid"></div>
-              <div
-                style="width: 0px; height: 8.33px; left: 8.33px; top: 5.83px; position: absolute; border: 1.50px #555F75 solid"></div>
-              <div
-                style="width: 0px; height: 16.67px; left: 16.67px; top: 16.67px; position: absolute; transform: rotate(90deg); transform-origin: 0 0; border: 1.50px #555F75 solid"></div>
-              <div
-                style="width: 0px; height: 5px; left: 15px; top: 9.17px; position: absolute; border: 1.50px #555F75 solid"></div>
-              <div
-                style="width: 16.67px; height: 8.33px; left: 0px; top: 0px; position: absolute; border: 1.50px #555F75 solid"></div>
-            </div>
-          </div>
+          <svg fill="none" height="20" viewBox="0 0 20 20" width="20" xmlns="http://www.w3.org/2000/svg">
+            <path d="M3.33301 12.5L3.33301 15.8333" stroke="#555F75" stroke-linecap="round" stroke-linejoin="round"
+                  stroke-width="1.5" />
+            <path d="M10 7.5L10 15.8333" stroke="#555F75" stroke-linecap="round" stroke-linejoin="round"
+                  stroke-width="1.5" />
+            <path d="M18.333 18.3335L1.66634 18.3335" stroke="#555F75" stroke-linecap="round" stroke-linejoin="round"
+                  stroke-width="1.5" />
+            <path d="M16.6665 10.8335L16.6665 15.8335" stroke="#555F75" stroke-linecap="round" stroke-linejoin="round"
+                  stroke-width="1.5" />
+            <path
+              d="M4.66658 7.33336C4.36251 6.92857 3.87842 6.66675 3.33317 6.66675C2.4127 6.66675 1.6665 7.41294 1.6665 8.33341C1.6665 9.25389 2.4127 10.0001 3.33317 10.0001C4.25365 10.0001 4.99984 9.25389 4.99984 8.33341C4.99984 7.95819 4.87584 7.61192 4.66658 7.33336ZM4.66658 7.33336L8.66643 4.33347M8.66643 4.33347C8.9705 4.73826 9.45459 5.00008 9.99984 5.00008C10.6523 5.00008 11.2172 4.62513 11.4909 4.07893M8.66643 4.33347C8.45717 4.05491 8.33317 3.70864 8.33317 3.33341C8.33317 2.41294 9.07936 1.66675 9.99984 1.66675C10.9203 1.66675 11.6665 2.41294 11.6665 3.33341C11.6665 3.6014 11.6033 3.85461 11.4909 4.07893M11.4909 4.07893L15.1755 5.92123M15.1755 5.92123C15.0631 6.14555 14.9998 6.39876 14.9998 6.66675C14.9998 7.58722 15.746 8.33341 16.6665 8.33341C17.587 8.33341 18.3332 7.58722 18.3332 6.66675C18.3332 5.74627 17.587 5.00008 16.6665 5.00008C16.014 5.00008 15.4491 5.37503 15.1755 5.92123Z"
+              stroke="#555F75" stroke-width="1.5" />
+          </svg>
           <div
             style="width: 391px; color: #323741; font-size: 14px; font-family: Inter; font-weight: 500; line-height: 20px; word-wrap: break-word">
             Avg. Monthly Revenue
           </div>
         </div>
         <div
-          style="width: 20px; height: 20px; padding-left: 5px; padding-right: 4.99px; justify-content: center; align-items: center; display: flex">
-          <div style="width: 10.01px; height: 0.83px; position: relative">
-            <div
-              style="width: 0.01px; height: 0.83px; left: 5px; top: 0px; position: absolute; border: 2.50px #888E9E solid"></div>
-            <div
-              style="width: 0.01px; height: 0.83px; left: 10px; top: 0px; position: absolute; border: 2.50px #888E9E solid"></div>
-            <div
-              style="width: 0.01px; height: 0.83px; left: 0px; top: 0px; position: absolute; border: 2.50px #888E9E solid"></div>
-          </div>
+          style="width: 20px; height: 20px; padding-left: 5px; padding-right: 4.99px; justify-content: center; align-items: center; display: flex;margin-left: -10px">
+          <app-three-dots></app-three-dots>
         </div>
       </div>
       <div style="justify-content: flex-start; align-items: flex-end; gap: 47px; display: inline-flex">
@@ -350,7 +342,7 @@
               +16,4%
             </div>
             <div
-              style="color: #888E9E; font-size: 14px; font-family: Inter; font-weight: 400; line-height: 20px; word-wrap: break-word">
+              style="color: #888E9E; font-size: 14px; font-family: Inter; font-weight: 400; line-height: 20px; word-wrap: break-word;white-space: nowrap">
               From last month
             </div>
           </div>
@@ -415,34 +407,15 @@
     <div style="flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 16px; display: flex">
       <div style="width: 232px; justify-content: flex-start; align-items: flex-start; gap: 72px; display: inline-flex">
         <div style="justify-content: flex-start; align-items: flex-start; gap: 8px; display: flex">
+          <app-customers-icon></app-customers-icon>
           <div
-            style="width: 20px; height: 20px; padding-left: 1.67px; padding-right: 1.67px; padding-top: 2.50px; padding-bottom: 2.50px; justify-content: center; align-items: center; display: flex">
-            <div style="width: 16.67px; height: 15px; position: relative">
-              <div
-                style="width: 6.67px; height: 6.67px; left: 2.50px; top: 0px; position: absolute; border: 1.50px #555F75 solid"></div>
-              <div
-                style="width: 3.33px; height: 6.67px; left: 10.83px; top: 0px; position: absolute; border: 1.50px #555F75 solid"></div>
-              <div
-                style="width: 11.67px; height: 5.83px; left: 0px; top: 9.17px; position: absolute; border: 1.50px #555F75 solid"></div>
-              <div
-                style="width: 4.17px; height: 5.83px; left: 12.50px; top: 9.17px; position: absolute; border: 1.50px #555F75 solid"></div>
-            </div>
-          </div>
-          <div
-            style="color: #323741; font-size: 14px; font-family: Inter; font-weight: 500; line-height: 20px; word-wrap: break-word">
+            style="color: #323741; font-size: 14px; font-family: Inter; font-weight: 500; line-height: 20px; word-wrap: break-word;white-space: nowrap">
             Active Customer
           </div>
         </div>
         <div
-          style="width: 20px; height: 20px; padding-left: 5px; padding-right: 4.99px; justify-content: center; align-items: center; display: flex">
-          <div style="width: 10.01px; height: 0.83px; position: relative">
-            <div
-              style="width: 0.01px; height: 0.83px; left: 5px; top: 0px; position: absolute; border: 2.50px #888E9E solid"></div>
-            <div
-              style="width: 0.01px; height: 0.83px; left: 10px; top: 0px; position: absolute; border: 2.50px #888E9E solid"></div>
-            <div
-              style="width: 0.01px; height: 0.83px; left: 0px; top: 0px; position: absolute; border: 2.50px #888E9E solid"></div>
-          </div>
+          style="width: 20px; height: 20px; padding-left: 5px; padding-right: 4.99px; justify-content: center; align-items: center; display: flex;margin-left: -17px">
+          <app-three-dots></app-three-dots>
         </div>
       </div>
       <div
@@ -485,19 +458,18 @@
     <div style="flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 16px; display: flex">
       <div style="justify-content: flex-start; align-items: flex-start; gap: 60px; display: inline-flex">
         <div style="justify-content: flex-start; align-items: flex-start; gap: 8px; display: flex">
-          <div
-            style="width: 20px; height: 20px; padding: 1.67px; justify-content: center; align-items: center; display: flex">
-            <div style="width: 16.67px; height: 16.67px; position: relative">
-              <div
-                style="width: 12.50px; height: 9.17px; left: 2.08px; top: 3.33px; position: absolute; border: 1.50px #555F75 solid"></div>
-              <div
-                style="width: 12.50px; height: 3.33px; left: 2.08px; top: 0px; position: absolute; border: 1.50px #555F75 solid"></div>
-              <div
-                style="width: 2.50px; height: 0px; left: 7.08px; top: 5.83px; position: absolute; border: 1.50px #555F75 solid"></div>
-              <div
-                style="width: 16.67px; height: 2.08px; left: 16.67px; top: 14.58px; position: absolute; transform: rotate(-180deg); transform-origin: 0 0; border: 1.50px #555F75 solid"></div>
-            </div>
-          </div>
+          <svg fill="none" height="20" viewBox="0 0 20 20" width="20" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M3.75 8.55442V5H16.25V8.55442C16.25 11.2001 16.25 12.5229 15.4364 13.3448C14.6228 14.1667 13.3134 14.1667 10.6944 14.1667H9.30556C6.68664 14.1667 5.37718 14.1667 4.56359 13.3448C3.75 12.5229 3.75 11.2001 3.75 8.55442Z"
+              stroke="#555F75" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" />
+            <path
+              d="M3.75 5.00008L4.35096 3.71803C4.81704 2.72373 5.05008 2.22658 5.52244 1.94666C5.9948 1.66675 6.6007 1.66675 7.8125 1.66675H12.1875C13.3993 1.66675 14.0052 1.66675 14.4776 1.94666C14.9499 2.22658 15.183 2.72373 15.649 3.71803L16.25 5.00008"
+              stroke="#555F75" stroke-linecap="round" stroke-width="1.5" />
+            <path d="M8.75 7.5H11.25" stroke="#555F75" stroke-linecap="round" stroke-width="1.5" />
+            <path
+              d="M10.0007 16.25V18.3333M10.0007 16.25H5.83398M10.0007 16.25H14.1673M5.83398 16.25L3.75065 16.25C2.60006 16.25 1.66732 17.1827 1.66732 18.3333M5.83398 16.25V18.3333M14.1673 16.25H16.2507C17.4012 16.25 18.334 17.1827 18.334 18.3333M14.1673 16.25V18.3333"
+              stroke="#555F75" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" />
+          </svg>
           <div
             style="color: #323741; font-size: 14px; font-family: Inter; font-weight: 500; line-height: 20px; word-wrap: break-word">
             Archived Products
@@ -505,14 +477,7 @@
         </div>
         <div
           style="width: 20px; height: 20px; padding-left: 5px; padding-right: 4.99px; justify-content: center; align-items: center; display: flex">
-          <div style="width: 10.01px; height: 0.83px; position: relative">
-            <div
-              style="width: 0.01px; height: 0.83px; left: 5px; top: 0px; position: absolute; border: 2.50px #888E9E solid"></div>
-            <div
-              style="width: 0.01px; height: 0.83px; left: 10px; top: 0px; position: absolute; border: 2.50px #888E9E solid"></div>
-            <div
-              style="width: 0.01px; height: 0.83px; left: 0px; top: 0px; position: absolute; border: 2.50px #888E9E solid"></div>
-          </div>
+          <app-three-dots></app-three-dots>
         </div>
       </div>
       <div style="flex-direction: column; justify-content: flex-start; align-items: flex-end; display: flex">
@@ -530,7 +495,7 @@
             style="width: 5.97px; height: 6px; left: 112.03px; top: 15.42px; position: absolute; border-radius: 9999px; border: 2px #DE2C41 solid"></div>
         </div>
         <div
-          style="height: 62px; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 8px; display: flex">
+          style="margin-top: -15px;height: 62px; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 8px; display: flex">
           <div
             style="color: #0F0F10; font-size: 24px; font-family: Inter; font-weight: 600; line-height: 34px; word-wrap: break-word">
             2,926

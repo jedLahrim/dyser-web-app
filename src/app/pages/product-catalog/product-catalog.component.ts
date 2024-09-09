@@ -10,6 +10,8 @@ import {
 import { DownloadsIconComponent } from '../../components/icons/downloads-icon/downloads-icon.component';
 import { PaginationService } from '../../pagination/pagination.service';
 import { CheckboxComponent } from '../../checkbox/checkbox.component';
+import { ThreeDotsComponent } from '../../components/icons/linear/three-dots/three-dots.component';
+import { CustomersIconComponent } from '../../components/icons/linear/customers-icon/customers-icon.component';
 
 @Component({
   selector: 'app-product-catalog',
@@ -29,6 +31,8 @@ import { CheckboxComponent } from '../../checkbox/checkbox.component';
     DownArrowIconComponent,
     DownloadsIconComponent,
     CheckboxComponent,
+    ThreeDotsComponent,
+    CustomersIconComponent,
   ],
   templateUrl: './product-catalog.component.html',
   styleUrl: './product-catalog.component.css',
