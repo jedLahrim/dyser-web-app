@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NgIf } from '@angular/common';
+import { NgIf, NgStyle } from '@angular/common';
 import { ValidateAuthService } from '../../../validations/auth/validate-auth.service';
 import { RightArrowIconComponent } from '../../../components/icons/right-arrow-icon/right-arrow-icon.component';
 
@@ -9,6 +9,7 @@ import { RightArrowIconComponent } from '../../../components/icons/right-arrow-i
   imports: [
     NgIf,
     RightArrowIconComponent,
+    NgStyle,
   ],
   templateUrl: './getting-started.component.html',
   styleUrl: './getting-started.component.css',
@@ -24,6 +25,7 @@ export class GettingStartedComponent {
     'Your product information and checkout button...';
   publicKey: string = 'dj_test_mode_76KJnvdh90qejhjhsasdsd'.substring(0, 16);
   secretKey: string = '3f4d6e7b8a9c0e1f2g3h4j5k6l7m8n9o'.substring(0, 16);
+  copyMessage: string = 'Copy Code';
 
   constructor(public validateAuthService: ValidateAuthService) {
   }
@@ -38,5 +40,10 @@ export class GettingStartedComponent {
         console.error('Failed to copy text: ', err);
       },
     );
+
+    this.copyMessage = '✓⃝';
+    setTimeout(() => {
+      this.copyMessage = 'Copy Code';
+    }, 1500);
   }
 }

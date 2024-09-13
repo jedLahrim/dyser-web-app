@@ -30,8 +30,9 @@
             </svg>
           </div>
           <div
-            style="color: #323741; font-size: 8.50px; font-family: Inter; font-weight: 400; line-height: 13.60px; word-wrap: break-word">
-            Copy Code
+            [ngStyle]="{'margin-left':copyMessage=='Copy Code'?'0px':'5px'}"
+            style="margin-left: 0px;color: #323741; font-size: 8.50px; font-family: Inter; font-weight: 400; line-height: 13.60px; word-wrap: break-word">
+            {{ copyMessage }}
           </div>
         </div>
       </button>
