@@ -1,69 +1,74 @@
 <div
-  style="height: 240px; width: 880px;padding: 24px; left: 376px; top: 444px; position: absolute; background: white; border-radius: 12px; border: 1px #EAEDF2 solid; flex-direction: column; justify-content: center; align-items: flex-start; gap: 50px;
+  style="height: 190px; width: 880px;padding: 24px; left: 376px; top: 444px; position: absolute; background: white; border-radius: 12px; border: 1px #EAEDF2 solid; flex-direction: column; justify-content: center; align-items: flex-start; gap: 50px;
   display: inline-flex;margin-top: 60px">
   <div
-    style="width: 258px; height: 134px; position: absolute; background: #F8FAFB; border-radius: 6.80px; overflow: hidden; border: 0.85px #EAEDF2
-    solid; margin-left: 447px; margin-top: -10px; z-index: 0">
+    style="transform: translate(30px, -30px);width: 258px; height: 134px; position: absolute; background: #F8FAFB; border-radius: 6.80px; overflow: hidden; border: 0.85px #EAEDF2
+    solid; margin-left: 447px; margin-top: 64px; z-index: 0">
     <div
       style="width: 192.14px; height: 119.02px; left: 10.20px; top: 22.10px; position: absolute; color: rgba(50, 55, 65, 0.92); font-size: 8.50px; font-family: Inter; font-weight: 400; line-height: 13.60px; word-wrap: break-word"></div>
 
     <pre
-      style="margin-left: 6px; font-size: 8px; margin-top: 22px; white-space: break-spaces; word-wrap: break-word;font-family: Inter">{{ codeString }}</pre>
+      style="margin-left: 6px; font-size: 8px; margin-top: 22px; white-space: break-spaces; word-wrap: break-word;font-family: Inter;line-height: 1.7">{{ codeString }}</pre>
     <div
       style="width: 258px; padding-top: 1.70px; padding-bottom: 1.30px; padding-left: 10.20px; padding-right: 40.26px; left: 0.85px; top: 0.85px; position: absolute; background: #EAEDF2; justify-content: flex-start; align-items: flex-start; gap: 91.43px; display: inline-flex">
       <div
         style="color: #323741; font-size: 8.50px; font-family: Inter; font-weight: 400; line-height: 13.60px; word-wrap: break-word">
         html
       </div>
-      <div
-        style="align-self: stretch; justify-content: flex-start; align-items: center; gap: 1.70px; display: inline-flex">
+      <button (click)="copyText()" style="background: none; border: none; cursor: pointer; padding: 0;">
         <div
-          style="width: 9.35px; height: 9.35px; padding: 0.78px; justify-content: center; align-items: center; display: flex">
-          <div style="width: 7.79px; height: 7.79px; position: relative">
-            <div
-              style="width: 5.07px; height: 5.07px; left: 2.73px; top: 2.73px; position: absolute; border-radius: 2.55px; border: 0.85px #555F75 solid"></div>
-            <div
-              style="width: 5.84px; height: 5.84px; left: 0px; top: 0px; position: absolute; border: 0.85px #555F75 solid"></div>
+          style="align-self: stretch; justify-content: flex-start; align-items: center; gap: 1.70px; display: inline-flex">
+          <div
+            style="width: 9.35px; height: 9.35px; padding: 0.78px; justify-content: center; align-items: center; display: flex">
+            <svg fill="none" height="11" viewBox="0 0 10 11" width="10" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M3.98633 6.72079C3.98633 5.61866 3.98633 5.06759 4.32872 4.7252C4.67111 4.38281 5.22217 4.38281 6.32431 4.38281L6.71397 4.38281C7.81611 4.38281 8.36717 4.38281 8.70956 4.7252C9.05195 5.06759 9.05195 5.61866 9.05195 6.72079V7.11045C9.05195 8.21259 9.05195 8.76366 8.70956 9.10604C8.36717 9.44843 7.8161 9.44843 6.71397 9.44843H6.32431C5.22217 9.44843 4.67111 9.44843 4.32872 9.10604C3.98633 8.76366 3.98633 8.21259 3.98633 7.11045L3.98633 6.72079Z"
+                stroke="#555F75" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.850174" />
+              <path
+                d="M7.10369 4.38292C7.10278 3.23065 7.08533 2.6338 6.74994 2.22513C6.68517 2.14621 6.6128 2.07384 6.53388 2.00907C6.10278 1.65527 5.46227 1.65527 4.18126 1.65527C2.90025 1.65527 2.25975 1.65527 1.82864 2.00907C1.74972 2.07384 1.67736 2.14621 1.61259 2.22513C1.25879 2.65623 1.25879 3.29674 1.25879 4.57775C1.25879 5.85876 1.25879 6.49926 1.61259 6.93037C1.67736 7.00929 1.74972 7.08165 1.82864 7.14642C2.23731 7.48181 2.83416 7.49926 3.98643 7.50017"
+                stroke="#555F75" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.850174" />
+            </svg>
+          </div>
+          <div
+            style="color: #323741; font-size: 8.50px; font-family: Inter; font-weight: 400; line-height: 13.60px; word-wrap: break-word">
+            Copy Code
           </div>
         </div>
-        <div
-          style="color: #323741; font-size: 8.50px; font-family: Inter; font-weight: 400; line-height: 13.60px; word-wrap: break-word">
-          Copy Code
-        </div>
-      </div>
+      </button>
     </div>
   </div>
-
   <div
-    style="width: 244px; height: 184px; padding: 13.60px; background: white; box-shadow: 0px 4px 6px -2px rgba(15, 15, 16, 0.03); border-radius: 8px; border: 0.50px #EAEDF2 solid; flex-direction: column;
-    justify-content: flex-start; align-items: flex-start; gap: 13.60px; display: flex;margin-left: 600px;z-index: 1;margin-top: 20px">
-    <div
-      style="height: 34.01px; flex-direction: column; justify-content: flex-start; align-items: center; gap: 3.40px; display: flex">
+    style="transform: translate(10px, -10px);width: 224px; height: 184px; padding: 13.60px; background: white; box-shadow: 0px 4px 6px -2px rgba(15, 15, 16, 0.3); border-radius: 8px; border: 0.50px #EAEDF2 solid; flex-direction: column;
+    justify-content: flex-start; align-items: flex-start; gap: 13.60px; display: flex;margin-left: 620px;z-index: 1;margin-top: 10px">
+    <button style="background: none; border: none; cursor: pointer; padding: 0;">
       <div
-        style="align-self: stretch; padding-top: 8.50px; padding-bottom: 8.50px; padding-left: 10.20px; padding-right: 8.50px; background: white; box-shadow: 0px 0.8501742482185364px 0.8501742482185364px rgba(234, 237, 242, 0.30); border-radius: 8px; overflow: hidden; border: 0.85px #EAEDF2 solid; justify-content: flex-start; align-items: center; gap: 6.80px; display: inline-flex">
+        style="height: 34.01px; flex-direction: column; justify-content: flex-start; align-items: center; gap: 3.40px; display: flex">
         <div
-          style="width: 15px; height: 15px; padding: 1.25px; justify-content: center; align-items: center; display: flex">
-          <div style="width: 12.50px; height: 12.50px; position: relative">
-            <div
-              style="width: 5.31px; height: 5.31px; left: 7.19px; top: 0px; position: absolute; border-radius: 9999px; border: 1px #888E9E solid"></div>
-            <div
-              style="width: 5.31px; height: 5.31px; left: 0px; top: 0px; position: absolute; border-radius: 9999px; border: 1px #888E9E solid"></div>
-            <div
-              style="width: 5.31px; height: 5.31px; left: 7.19px; top: 7.19px; position: absolute; border-radius: 9999px; border: 1px #888E9E solid"></div>
-            <div
-              style="width: 5.31px; height: 5.31px; left: 0px; top: 7.19px; position: absolute; border-radius: 9999px; border: 1px #888E9E solid"></div>
+          style="width: 200px;align-self: stretch; padding-top: 8.50px; padding-bottom: 8.50px; padding-left: 10.20px; padding-right: 8.50px; background: white; box-shadow: 0px 0.8501742482185364px 0.8501742482185364px rgba(234, 237, 242, 0.30); border-radius: 8px; overflow: hidden; border: 0.85px #EAEDF2 solid; justify-content: flex-start; align-items: center; gap: 6.80px; display: inline-flex">
+          <div
+            style="width: 15px; height: 15px; padding: 1.25px; justify-content: center; align-items: center; display: flex">
+            <div style="width: 12.50px; height: 12.50px; position: relative">
+              <div
+                style="width: 5.31px; height: 5.31px; left: 7.19px; top: 0px; position: absolute; border-radius: 9999px; border: 1px #888E9E solid"></div>
+              <div
+                style="width: 5.31px; height: 5.31px; left: 0px; top: 0px; position: absolute; border-radius: 9999px; border: 1px #888E9E solid"></div>
+              <div
+                style="width: 5.31px; height: 5.31px; left: 7.19px; top: 7.19px; position: absolute; border-radius: 9999px; border: 1px #888E9E solid"></div>
+              <div
+                style="width: 5.31px; height: 5.31px; left: 0px; top: 7.19px; position: absolute; border-radius: 9999px; border: 1px #888E9E solid"></div>
+            </div>
+          </div>
+          <div
+            style="flex: 1 1 0; color: #888E9E; font-size: 11.90px; font-family: Inter; font-weight: 400; line-height: 17px; word-wrap: break-word">
+            Explore all products
+          </div>
+          <div
+            style="width: 17px; height: 17px; padding-left: 5.26px; padding-right: 5.26px; padding-top: 2.83px; padding-bottom: 2.83px; justify-content: center; align-items: center; display: flex">
+            <app-right-arrow-icon></app-right-arrow-icon>
           </div>
         </div>
-        <div
-          style="flex: 1 1 0; color: #888E9E; font-size: 11.90px; font-family: Inter; font-weight: 400; line-height: 17px; word-wrap: break-word">
-          Explore all products
-        </div>
-        <div
-          style="width: 17px; height: 17px; padding-left: 5.26px; padding-right: 5.26px; padding-top: 2.83px; padding-bottom: 2.83px; justify-content: center; align-items: center; display: flex">
-          <div style="width: 6.48px; height: 11.34px; background: #888E9E"></div>
-        </div>
       </div>
-    </div>
+    </button>
     <div
       style="align-self: stretch; flex: 1 1 0; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 13.60px; display: flex">
       <div style="align-self: stretch; justify-content: space-between; align-items: center; display: inline-flex">
@@ -109,56 +114,69 @@
           <div
             style="width: 61px; align-self: stretch; justify-content: flex-start; align-items: center; gap: 3.40px; display: flex">
             <div
-              style="color: #323741; font-size: 11.90px; font-family: Inter; font-weight: 400; line-height: 17px; word-wrap: break-word">
+              style="white-space: nowrap;color: #323741; font-size: 11.90px; font-family: Inter; font-weight: 400; line-height: 17px; word-wrap: break-word">
               Secret Key
             </div>
           </div>
         </div>
         <div
           style="flex: 1 1 0; height: 13.60px; justify-content: flex-start; align-items: center; gap: 4.25px; display: flex">
+
           <div style="justify-content: flex-start; align-items: center; gap: 3.40px; display: flex">
-            <div style="width: 5.10px; height: 5.10px; background: #888E9E; border-radius: 9999px"></div>
-            <div style="width: 5.10px; height: 5.10px; background: #888E9E; border-radius: 9999px"></div>
-            <div style="width: 5.10px; height: 5.10px; background: #888E9E; border-radius: 9999px"></div>
-            <div style="width: 5.10px; height: 5.10px; background: #888E9E; border-radius: 9999px"></div>
-            <div style="width: 5.10px; height: 5.10px; background: #888E9E; border-radius: 9999px"></div>
-            <div style="width: 5.10px; height: 5.10px; background: #888E9E; border-radius: 9999px"></div>
-            <div style="width: 5.10px; height: 5.10px; background: #888E9E; border-radius: 9999px"></div>
-            <div style="width: 5.10px; height: 5.10px; background: #888E9E; border-radius: 9999px"></div>
-          </div>
-          <div
-            style="width: 13.60px; height: 13.60px; padding-left: 1.13px; padding-right: 1.13px; padding-top: 2.83px; padding-bottom: 2.83px; justify-content: center; align-items: center; display: flex">
-            <div style="width: 11.34px; height: 7.93px; position: relative">
-              <div
-                style="width: 11.34px; height: 7.93px; left: 0px; top: 0px; position: absolute; border: 1.28px #888E9E solid"></div>
-              <div
-                style="width: 3.40px; height: 3.40px; left: 3.97px; top: 5.67px; position: absolute; border: 1.28px #888E9E solid"></div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div
-        style="width: 201px; height: 13px; justify-content: flex-start; align-items: center; gap: 6.80px; display: inline-flex">
-        <div
-          style="width: 136px; align-self: stretch; justify-content: flex-start; align-items: center; gap: 3.40px; display: flex">
-          <div
-            style="color: #6438F5; font-size: 11.90px; font-family: Inter; font-weight: 500; line-height: 17px; word-wrap: break-word">
-            View Documentation
-          </div>
-          <div style="width: 13.60px; height: 13.60px; justify-content: center; align-items: center; display: flex">
-            <div
-              style="width: 13.60px; height: 13.60px; padding-left: 2.27px; padding-right: 2.27px; padding-top: 3.97px; padding-bottom: 3.97px; justify-content: center; align-items: center; display: inline-flex">
-              <div
-                style="width: 5.67px; height: 9.07px; position: relative; transform: rotate(90deg); transform-origin: 0 0">
-                <div
-                  style="width: 9.07px; height: 0px; left: -0px; top: 2.83px; position: absolute; border: 1.28px #6438F5 solid"></div>
-                <div
-                  style="width: 2.83px; height: 5.67px; left: 6.23px; top: 0px; position: absolute; border: 1.28px #6438F5 solid"></div>
+            @if (validateAuthService.isPasswordShowed) {
+              <div style="font-size: 10.20px">
+                {{ secretKey }}...
               </div>
+
+            } @else {
+              <div style="width: 5.10px; height: 5.10px; background: #888E9E; border-radius: 9999px"></div>
+              <div style="width: 5.10px; height: 5.10px; background: #888E9E; border-radius: 9999px"></div>
+              <div style="width: 5.10px; height: 5.10px; background: #888E9E; border-radius: 9999px"></div>
+              <div style="width: 5.10px; height: 5.10px; background: #888E9E; border-radius: 9999px"></div>
+              <div style="width: 5.10px; height: 5.10px; background: #888E9E; border-radius: 9999px"></div>
+              <div style="width: 5.10px; height: 5.10px; background: #888E9E; border-radius: 9999px"></div>
+              <div style="width: 5.10px; height: 5.10px; background: #888E9E; border-radius: 9999px"></div>
+              <div style="width: 5.10px; height: 5.10px; background: #888E9E; border-radius: 9999px"></div>
+            }
+
+          </div>
+          <button (click)="validateAuthService.showPassword()"
+                  style="background: none; border: none; cursor: pointer; padding: 0;">
+            <svg fill="none" height="10" viewBox="0 0 14 10" width="14" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M12.4785 4.68181C12.6509 4.92344 12.737 5.04426 12.737 5.2231C12.737 5.40194 12.6509 5.52275 12.4785 5.76438C11.7043 6.85008 9.72697 9.19058 7.0692 9.19058C4.41143 9.19058 2.4341 6.85008 1.65984 5.76438C1.48753 5.52275 1.40137 5.40194 1.40137 5.2231C1.40137 5.04426 1.48753 4.92344 1.65984 4.68181C2.4341 3.59611 4.41143 1.25562 7.0692 1.25562C9.72697 1.25562 11.7043 3.59611 12.4785 4.68181Z"
+                stroke="#888E9E" stroke-width="1.27526" />
+              <path
+                d="M8.76935 5.22299C8.76935 4.28391 8.00808 3.52264 7.069 3.52264C6.12992 3.52264 5.36865 4.28391 5.36865 5.22299C5.36865 6.16207 6.12992 6.92334 7.069 6.92334C8.00808 6.92334 8.76935 6.16207 8.76935 5.22299Z"
+                stroke="#888E9E" stroke-width="1.27526" />
+              <!-- Conditional line to cross the eye -->
+              <path *ngIf="validateAuthService.isPasswordShowed" d="M1 2L13 9" stroke="#888E9E" stroke-width="1.5" />
+            </svg>
+          </button>
+        </div>
+      </div>
+      <button style="background: none; border: none; cursor: pointer; padding: 0;">
+        <div
+          style="width: 201px; height: 13px; justify-content: flex-start; align-items: center; gap: 6.80px; display: inline-flex">
+          <div
+            style="width: 136px; align-self: stretch; justify-content: flex-start; align-items: center; gap: 3.40px; display: flex">
+            <div
+              style="white-space: nowrap;color: #6438F5; font-size: 11.90px; font-family: Inter; font-weight: 500; line-height: 17px; word-wrap: break-word">
+              View Documentation
+            </div>
+            <div style="width: 13.60px; height: 13.60px; justify-content: center; align-items: center; display: flex">
+              <svg fill="none" height="14" viewBox="0 0 14 14" width="14" xmlns="http://www.w3.org/2000/svg">
+                <path d="M11.339 7.12695L2.27051 7.12695" stroke="#6438F5" stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="1.27526" />
+                <path
+                  d="M8.50539 9.96104C8.50539 9.96104 11.3393 7.87389 11.3393 7.1271C11.3393 6.38031 8.50537 4.29321 8.50537 4.29321"
+                  stroke="#6438F5" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.27526" />
+              </svg>
             </div>
           </div>
         </div>
-      </div>
+      </button>
     </div>
   </div>
   <!--  Getting Started and Explore Documentation-->
@@ -170,13 +188,14 @@
         Getting Started
       </div>
       <div
-        style="width: 476px; color: #888E9E; font-size: 14px; font-family: Inter; font-weight: 400; line-height: 20px; word-wrap: break-word">
-        Develop products, subscriptions, and checkout integration, manage invoicing, oversee subscription lifecycle, and
-        conduct thorough integration testing.
+        style="width: 476px; color: #888E9E; font-size: 12.5px; font-family: Inter; font-weight: 400; line-height: 20px; word-wrap: break-word;white-space: nowrap">
+        Develop products, subscriptions, and checkout integration, manage <br>
+        invoicing, oversee subscription lifecycle, and conduct thorough<br>
+        integration testing.
       </div>
     </div>
     <button
-      style="background: none; border: none; cursor: pointer; padding: 0;margin-top: 100px">
+      style="background: none; border: none; cursor: pointer; padding: 0;margin-top: 60px">
       <div
         style="align-self: stretch; justify-content: flex-start; align-items: flex-start; gap: 8px; display: inline-flex;">
         <div
@@ -193,7 +212,7 @@
     </button>
   </div>
   <div
-    style="width: 174px; height: 102px; position: relative;margin-left: 313.8px;margin-top: -130px">
+    style="transform: translate(34px, -6px);width: 174px; height: 102px; position: relative;margin-left: 313.8px;margin-top: -130px">
     <div
       style="width: 172px; height: 46px; left: 1px; top: 27px; position: absolute; background: white; box-shadow: 0px 1px 2px rgba(24, 35, 34, 0.05); border-radius: 6px; border: 0.50px #EAEDF2 solid"></div>
     <div style="width: 152px; height: 68px; left: 11px; top: 16px; position: absolute">
