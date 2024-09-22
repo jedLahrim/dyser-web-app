@@ -23,7 +23,7 @@ export class PaginationService {
     this.startIndex = (this.currentPage - 1) * this.pageSize;
     this.endIndex = Math.min(this.startIndex + this.pageSize, this.data.length);
     this.paginatedData = this.data.slice(this.startIndex, this.endIndex);
-    console.log('here is paginated data', this.data.length);
+    console.log('here is paginated data', this.paginatedData.length);
     return this.paginatedData;
   }
 
@@ -59,5 +59,9 @@ export class PaginationService {
   onCheckboxChange(isChecked: boolean, index: number) {
     const globalIndex = (this.currentPage - 1) * this.pageSize + index;
     this.data[globalIndex].checked = isChecked;
+  }
+
+  showNextAndPrev() {
+    return this.data.length > 6;
   }
 }

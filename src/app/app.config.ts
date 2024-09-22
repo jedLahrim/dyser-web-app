@@ -4,10 +4,19 @@ import { provideRouter } from '@angular/router';
 import { routes } from './app.routes';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
+import { provideState, provideStore } from '@ngrx/store';
+import { appStore } from './store/app.store';
 
 export const appConfig: ApplicationConfig = {
   providers: [provideZoneChangeDetection({ eventCoalescing: true }),
     provideRouter(routes),
     provideAnimationsAsync(),
-    provideHttpClient(withInterceptorsFromDi())],
+    provideHttpClient(withInterceptorsFromDi()),
+    provideStore(),
+    provideState(appStore.customer),
+    provideState(appStore.transaction),
+    // provideStoreDevtools({ maxAge: 25, logOnly: !isDevMode() }),
+    // provideEffects(appEffects),
+  ],
+
 };

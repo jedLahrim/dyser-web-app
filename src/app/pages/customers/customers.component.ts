@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { SideBarComponent } from '../dashboard/side-bar/side-bar.component';
 import { HeaderComponent } from '../../components/header/header.component';
 import { LeftArrowIconComponent } from '../../components/icons/left-arrow-icon/left-arrow-icon.component';
@@ -8,6 +8,13 @@ import { DownloadsIconComponent } from '../../components/icons/downloads-icon/do
 import { AddIconComponent } from '../../components/icons/add-icon/add-icon.component';
 import { PaginationService } from '../../pagination/pagination.service';
 import { CheckboxComponent } from '../../checkbox/checkbox.component';
+import { CustomersService } from '../../apis/customers/service/customers.service';
+import { Store } from '@ngrx/store';
+import { selectCustomers } from '../../store/customers/customer.selector';
+import { Observable } from 'rxjs';
+import { Customer } from '../../apis/customers/models/customer.model';
+import { deleteCustomer } from '../../store/customers/customer.actions';
+import { ActionsComponent } from '../../components/actions/actions.component';
 
 @Component({
   selector: 'app-customers',
@@ -27,96 +34,36 @@ import { CheckboxComponent } from '../../checkbox/checkbox.component';
     DownloadsIconComponent,
     AddIconComponent,
     CheckboxComponent,
+    ActionsComponent,
   ],
   templateUrl: './customers.component.html',
   styleUrl: './customers.component.css',
 })
-export class CustomersComponent {
+export class CustomersComponent implements OnInit {
   headers = ['Customer name', 'Customer email', 'Payment method', 'Created date', 'Payment date', 'Status', 'Action'];
   isChecked: boolean = false;
+  customers$!: Observable<Customer[]>;
+  store = inject(Store);
 
-  constructor(public paginationService: PaginationService) {
+  constructor(public paginationService: PaginationService,
+              private customersService: CustomersService,
+  ) {
   }
 
   ngOnInit() {
+    // this.store.dispatch(loadCustomers());
     // Simulating data fetch
     this.paginationService.pageSize = 6;
-    this.paginationService.data = [
-      {
-        customerName: 'Tahsan Khan',
-        customerEmail: 'tahsankhan@gmail.com',
-        paymentMethod: 'Master Card',
-        createdDate: 'Jun 02, 2024',
-        PaymentDate: 'Jun 14,2024',
-        status: 'Active',
-        action: 'View',
-      },
-      {
-        customerName: 'Herry Kane',
-        customerEmail: 'herrykane@gmail.com',
-        paymentMethod: 'Visa Card',
-        createdDate: 'Jun 03, 2024',
-        PaymentDate: 'Jun 15,2024',
-        status: 'Pending',
-        action: 'View',
-      },
-      {
-        customerName: 'Herry Books',
-        customerEmail: 'herrybooks@gmail.com',
-        paymentMethod: 'JCB Card',
-        createdDate: 'Jun 04, 2024',
-        PaymentDate: 'Jun 16,2024',
-        status: 'Cancel',
-        action: 'View',
-      },
-      {
-        customerName: 'Alice Johnson',
-        customerEmail: 'alicejohnson@gmail.com',
-        paymentMethod: 'American Express',
-        createdDate: 'Jun 05, 2024',
-        PaymentDate: 'Jun 17, 2024',
-        status: 'Active',
-        action: 'View',
-      },
-      {
-        customerName: 'Michael Brown',
-        customerEmail: 'michaelbrown@gmail.com',
-        paymentMethod: 'Discover Card',
-        createdDate: 'Jun 06, 2024',
-        PaymentDate: 'Jun 18, 2024',
-        status: 'Pending',
-        action: 'View',
-      },
-      {
-        customerName: 'Emily Davis',
-        customerEmail: 'emilydavis@gmail.com',
-        paymentMethod: 'PayPal',
-        createdDate: 'Jun 07, 2024',
-        PaymentDate: 'Jun 19, 2024',
-        status: 'Pending',
-        action: 'View',
-      },
-      {
-        customerName: 'Chris Evans',
-        customerEmail: 'chrisevans@gmail.com',
-        paymentMethod: 'Debit Card',
-        createdDate: 'Jun 08, 2024',
-        PaymentDate: 'Jun 20, 2024',
-        status: 'Cancel',
-        action: 'Retry',
-      },
-      {
-        customerName: 'Sophia Turner',
-        customerEmail: 'sophiaturner@gmail.com',
-        paymentMethod: 'Google Pay',
-        createdDate: 'Jun 09, 2024',
-        PaymentDate: 'Jun 21, 2024',
-        status: 'Active',
-        action: 'View',
-      },
+    this.customers$ = this.store.select(selectCustomers);
+    this.customers$.subscribe(customers => {
+      this.paginationService.data = customers.map(customer => {
+        return { ...customer };
+      });
+      this.paginationService.updatePagination();
+    });
+  }
 
-      // Add more rows as needed
-    ];
-    this.paginationService.updatePagination();
+  delete(customer: Customer) {
+    this.store.dispatch(deleteCustomer({ customerId: customer.id }));
   }
 }

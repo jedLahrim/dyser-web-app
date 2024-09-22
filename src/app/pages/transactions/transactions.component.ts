@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, inject, Input, OnInit } from '@angular/core';
 import { SideBarComponent } from '../dashboard/side-bar/side-bar.component';
 import { HeaderComponent } from '../../components/header/header.component';
 import { FilterIconComponent } from '../../components/icons/filter-icon/filter-icon.component';
@@ -9,6 +9,12 @@ import { NgClass, NgFor, NgStyle, NgSwitch, NgSwitchCase } from '@angular/common
 import { MasterCardIconComponent } from '../../components/icons/master-card-icon/master-card-icon.component';
 import { PaginationService } from '../../pagination/pagination.service';
 import { CheckboxComponent } from '../../checkbox/checkbox.component';
+import { ActionsComponent } from '../../components/actions/actions.component';
+import { Store } from '@ngrx/store';
+import { selectTransactions } from '../../store/transactions/transaction.selector';
+import { Transaction } from '../../apis/transactions/models/transaction.model';
+import { Observable } from 'rxjs';
+import { deleteTransaction } from '../../store/transactions/transaction.actions';
 
 @Component({
   selector: 'app-transactions',
@@ -27,108 +33,37 @@ import { CheckboxComponent } from '../../checkbox/checkbox.component';
     RightArrowIconComponent,
     MasterCardIconComponent,
     CheckboxComponent,
+    ActionsComponent,
   ],
   templateUrl: './transactions.component.html',
   styleUrl: './transactions.component.css',
 })
-export class TransactionsComponent {
+export class TransactionsComponent implements OnInit {
 
   @Input() downloadsIconColor!: string;
   isChecked: boolean = false;
   headers = ['Account name', 'Invoice', 'Payment type', 'Date', 'Amount', 'Status', 'Action'];
   color: string = 'white';
+  transactions$!: Observable<Transaction[]>;
+  store = inject(Store);
 
   constructor(public paginationService: PaginationService) {
-
-
   }
 
   ngOnInit() {
-    this.paginationService.pageSize = 6;
+    // this.store.dispatch(loadTransactions());
     // Simulating data fetch
-    this.paginationService.data = [
-      {
-        accountName: 'Azam Khan',
-        email: 'azamkhan@gmail.com',
-        invoice: 'INV_97686976',
-        paymentType: 'Transportation',
-        date: 'Jun 02, 2024',
-        amount: '$35,765.97',
-        status: 'Success',
-        action: 'View',
-      },
-      {
-        accountName: 'Sayed Ahmed',
-        email: 'sayedahmed@gmail.com',
-        invoice: 'INV_42536478',
-        paymentType: 'Online payment',
-        date: 'Jun 03, 2024',
-        amount: '$75,689.08',
-        status: 'Pending',
-        action: 'View',
-      },
-      {
-        accountName: 'Sayed Ahmed',
-        email: 'sayedahmed@gmail.com',
-        invoice: 'INV_42536478',
-        paymentType: 'Online payment',
-        date: 'Jun 03, 2024',
-        amount: '$75,689.08',
-        status: 'Failed',
-        action: 'View',
-      },
-      {
-        accountName: 'Azam Khan 44',
-        email: 'azamkhan@gmail.com 44',
-        invoice: 'INV_97686976',
-        paymentType: 'Transportation 44',
-        date: 'Jun 02, 2024',
-        amount: '$35,765.97',
-        status: 'Success',
-        action: 'View',
-      },
-      {
-        accountName: 'Sayed Ahmed 44',
-        email: 'sayedahmed@gmail.com 44',
-        invoice: 'INV_42536478',
-        paymentType: 'Online payment 44',
-        date: 'Jun 03, 2024',
-        amount: '$75,689.08',
-        status: 'Failed',
-        action: 'View',
-      },
-      {
-        accountName: 'Sayed Ahmed 44',
-        email: 'sayedahmed@gmail.com 44',
-        invoice: 'INV_42536478',
-        paymentType: 'Online payment 44',
-        date: 'Jun 03, 2024',
-        amount: '$75,689.08',
-        status: 'Failed',
-        action: 'View',
-      },
-      {
-        accountName: 'John Doe 22',
-        email: 'johndoe@gmail.com 22',
-        invoice: 'INV_42536479',
-        paymentType: 'Credit Card 22',
-        date: 'Jul 10, 2024',
-        amount: '$120,450.50',
-        status: 'Pending',
-        action: 'Pending',
-      },
-      {
-        accountName: 'Jane Smith 33',
-        email: 'janesmith@gmail.com 33',
-        invoice: 'INV_42536480',
-        paymentType: 'Bank Transfer 33',
-        date: 'Aug 15, 2024',
-        amount: '$95,300.00',
-        status: 'Failed',
-        action: 'Download',
-      },
-    ];
-    this.paginationService.updatePagination();
+    this.paginationService.pageSize = 6;
+    this.transactions$ = this.store.select(selectTransactions);
+    this.transactions$.subscribe(transactions => {
+      this.paginationService.data = transactions?.map(transaction => {
+        return { ...transaction };
+      });
+      this.paginationService.updatePagination();
+    });
   }
 
+  delete(transaction: Transaction) {
+    this.store.dispatch(deleteTransaction({ transactionId: transaction.id }));
+  }
 }

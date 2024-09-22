@@ -18,7 +18,7 @@ import { PaginationService } from '../../../pagination/pagination.service';
 import { CheckboxComponent } from '../../../checkbox/checkbox.component';
 
 @Component({
-  selector: 'app-transaction-history',
+  selector: 'app-transactions-history',
   standalone: true,
   imports: [FormsModule, NgClass, NgFor, InvoiceIconComponent, NgIf,
     NgOptimizedImage, MasterCardIconComponent,

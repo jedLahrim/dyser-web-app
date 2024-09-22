@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-transaction-icon',
+  selector: 'app-transactions-icon',
   standalone: true,
   imports: [],
   templateUrl: './transaction-icon.component.html',
