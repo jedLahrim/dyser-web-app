@@ -7,17 +7,17 @@ import { CustomersService } from '../../apis/customers/service/customers.service
 
 @Injectable()
 export class CustomerEffects {
-  loadCustomers$ = createEffect(() =>
-    this.actions$.pipe(
-      ofType(loadCustomers),
-      mergeMap(() =>
-        this.customersService.getCustomers().pipe(
-          map((customers) => loadCustomersSuccess({ customers })),
-          catchError((error) => of(loadCustomersFailure({ error }))),
-        ),
-      ),
-    ),
-  );
+  // loadCustomers$ = createEffect(() =>
+  //   this.actions$.pipe(
+  //     ofType(loadCustomers),
+  //     mergeMap(() =>
+  //       this.customersService.getCustomers().pipe(
+  //         map((customers) => loadCustomersSuccess({ customers })),
+  //         catchError((error) => of(loadCustomersFailure({ error }))),
+  //       ),
+  //     ),
+  //   ),
+  // );
 
   constructor(private actions$: Actions, private customersService: CustomersService) {
   }

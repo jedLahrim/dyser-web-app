@@ -1,24 +1,42 @@
-import { Injectable } from '@angular/core';
+import { inject, Injectable } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
-import { catchError, map, mergeMap } from 'rxjs/operators';
+import { catchError, exhaustMap, switchMap } from 'rxjs/operators';
 import { of } from 'rxjs';
 import { loadTransactions, loadTransactionsFailure, loadTransactionsSuccess } from './transaction.actions';
 import { TransactionService } from '../../apis/transactions/service/transaction.service';
 
 @Injectable()
 export class TransactionEffects {
+  actions$ = inject(Actions);
+  transactionService = inject(TransactionService);
   loadTransactions$ = createEffect(() =>
     this.actions$.pipe(
       ofType(loadTransactions),
-      mergeMap(() =>
+      exhaustMap((data) =>
         this.transactionService.getTransactions().pipe(
-          map((transactions) => loadTransactionsSuccess({ transactions })),
-          catchError((error) => of(loadTransactionsFailure({ error }))),
+          switchMap((res) => [
+            loadTransactionsSuccess({ transactions: res }),
+            // notify({
+            //   message: 'Contact is Created !',
+            //   color: 'alert-success',
+            // }),
+          ]),
+          catchError((error) =>
+            of(
+              loadTransactionsFailure({ error: error.message }),
+              // notify({
+              //   message: 'error: ' + error.message,
+              //   color: 'alert-error',
+              //   position: 'toast-top toast-center',
+              //   duration: 10000,
+              // })
+            ),
+          ),
         ),
       ),
     ),
   );
 
-  constructor(private actions$: Actions, private transactionService: TransactionService) {
-  }
+  // constructor(private actions$: Actions, private transactionService: TransactionService) {
+  // }
 }
